@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placeholder Company</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    
+    <script src="dbconfig.js" type="module"></script>
+
+    <script type="module">
+        //at login page, permisions are revoked
+        localStorage.setItem("USER","");
+        localStorage.setItem("canEdit","false");
+        localStorage.setItem("canAdd","false");
+        localStorage.setItem("canClose","false");
+    </script>
+    
+</head>
+<body>
+    <div class="banner">
+        <a href="index.html">
+            <h1>ABOGADOS & CO.</h1>
+            <h3>Despacho fiscal</h3>
+        </a>
+    </div>
+
+    <div class="container">
+        <div class="loginForm">
+            <input type="text" placeholder="username" id="enterUsername"><br>
+            <input type="password" placeholder="password" id="enterPassword"><br>
+            <button id="loginSubmit">Submit</button>
+        </div>
+    </div>
+
+    <script src="index.js" type="module"></script>
+
+</body>
+</html>
