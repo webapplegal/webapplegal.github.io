@@ -121,6 +121,7 @@ button:hover{
 
 .existingDocs{
     text-align: left;
+    padding: 10px;
 }
 
 ul{
@@ -142,9 +143,10 @@ a.actionlink:hover{
     color: white;
 }
 
+
 .status{
     padding: 0px;
-    margin-left: 5px;
+    margin-left: 20px;
     margin-right: 5px;
     color: gray;
 }
