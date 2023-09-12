@@ -141,3 +141,22 @@ a.actionlink{
 a.actionlink:hover{
     color: white;
 }
+
+.status{
+    padding: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: gray;
+}
+.due_date{
+    padding: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: gray;
+}
+.mod_date{
+    padding: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: gray;
+}

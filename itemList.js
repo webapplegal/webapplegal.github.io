@@ -13,10 +13,14 @@ function Render(id,status,mod_date,due_date){
     
     let ul = document.getElementById("itemList");
     let _id = document.createElement('li');
-    let _mod_date = document.createElement('li');
-    let _status = document.createElement('li');
-    let _due_date = document.createElement('li');
-    
+    let _mod_date = document.createElement('span');
+    let _status = document.createElement('span');
+    let _due_date = document.createElement('span');
+
+    _status.classList.add("docStatus")
+    _mod_date.classList.add("mod_date")
+    _due_date.classList.add("due_date")
+
     _id.innerHTML = id;
     _status.innerHTML = status;
     _mod_date.innerHTML = mod_date;
