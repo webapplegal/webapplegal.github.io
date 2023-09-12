@@ -4,11 +4,21 @@ html,body{
     font-family: 'Gotham', sans-serif;
 }
 
+.header{
+    text-align: center;
+    margin: 15px;
+}
+
 .banner{
     text-align: center;
+    background-color: #922d2d;
+    padding: 15px;
+    border-radius: 20px;
+    color: white;
 }
 
 .navlinks{
+    color:  rgb(109, 107, 107);
     text-align: center;
 }
 
