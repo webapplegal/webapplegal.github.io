@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Page</title>
+    <title>Register</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
 
@@ -12,10 +13,16 @@
     
     <script src="dbconfig.js" type="module"></script>
 
+    <script type="module">
+        //at login page, permisions are revoked
+        localStorage.setItem("USER","");
+        localStorage.setItem("canEdit","false");
+        localStorage.setItem("canAdd","false");
+        localStorage.setItem("canClose","false");
+    </script>
+    
 </head>
 <body>
-
-    <a href="addDoc.html"><h3>New Document</h3></a>
     
 </body>
 </html>
