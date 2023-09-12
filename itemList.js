@@ -9,7 +9,6 @@ console.log(dt)
 //Test for multiple item
 //console.log(USER); need to get USER varibale across all files from index
 function Render(id,status,mod_date,due_date){
-
     console.log(date)
     
     let ul = document.getElementById("itemList");
@@ -31,22 +30,19 @@ function Render(id,status,mod_date,due_date){
 }
 
 onValue(itemRef, (snapshot)=>{
+        console.log(snapshot)
         document.getElementById("itemList").innerHTML = "" // on change, reset to black and re-render
         snapshot.forEach(
             function(ChildSnapshot){
+                console.log(ChildSnapshot.val())
+
                 let status = ChildSnapshot.val().status;
                 let id = ChildSnapshot.val().id;
                 let mod_date = ChildSnapshot.val().mod_date;
                 let due_date = ChildSnapshot.val().due_date;
 
-                if(ChildSnapshot.val().Text=="Vaso Tp16"){
-                    window.currentStatus = ChildSnapshot.val().Fake;    
-                }
-                
-                
-                if(ChildSnapshot.val().Categoria==document.querySelector("#selectCategoria").value){
                 Render(id,status,mod_date,due_date)
-                }
+                
             }
         )
 });
