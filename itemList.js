@@ -14,6 +14,7 @@ console.log(dt)
 onValue(itemRef, (snapshot)=>{
         console.log(snapshot)
         document.getElementById("itemList").innerHTML = "" // on change, reset to black and re-render
+        docContainer.innerHTML=""
         snapshot.forEach(
             function(ChildSnapshot){
                 console.log(ChildSnapshot.val())
