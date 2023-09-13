@@ -6,6 +6,9 @@ console.log(date)
 let dt = date
 
 const docContainer = document.getElementById("doc-container")
+const newDocButton = document.getElementById('button-add-doc')
+
+newDocButton.addEventListener('click',()=>{location.href = 'addDoc.html'})
 
 console.log(dt)
 //Test for multiple item

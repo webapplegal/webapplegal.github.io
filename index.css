@@ -15,25 +15,6 @@ html,body{
     height: auto;
 }
 
-.action{
-    text-align: center;
-    padding: 5px;
-    margin: 15px;
-    width: 150px;
-    background-color: #d4d4d4;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-    transition: .2s;
-    color: black;
-}
-
-.action:hover{
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
-    width: 170px;
-    background-color: #7ec450;
-    color: white;
-}
-
 .banner{
     text-align: center;
     background-color: #00000080;
@@ -48,20 +29,7 @@ html,body{
     text-align: center;
 }
 
-h1{
-    font-size: 24px;
-    margin-bottom: 0px;
-}
 
-h3{
-    margin: 5px;
-    font-size: 16px;
-}
-
-h4{
-    padding: 5px;
-    margin: 0px;
-}
 
 a{
     text-decoration: none;
@@ -174,6 +142,21 @@ a.actionlink:hover{
 .card:hover{
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
     background-color: #d1d1d1;
+}
+
+h1{
+    font-size: 24px;
+    margin-bottom: 0px;
+}
+
+h3{
+    margin: 5px;
+    font-size: 16px;
+}
+
+h4{
+    padding: 5px;
+    margin: 0px;
 }
 
 h5{
