@@ -82,13 +82,10 @@ button.submit{
     transition: .2s;
 }
 
-button.primary:hover{
-    color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
-    box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.2);
-}
+
 
 button.primary{
+    font-size: 18px;
     text-align: center;  
     background-color: rgb(213, 213, 213);
     color: black;
@@ -102,13 +99,8 @@ button.primary{
     transition: .2s;
 }
 
-button.secondary:hover{
-    color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
-    box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.2);
-}
-
 button.secondary{
+    font-size: 18px;
     text-align: center;  
     background-color: rgba(213, 213, 213, 0);
     color: black;
@@ -121,6 +113,20 @@ button.secondary{
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
     transition: .2s;
 }
+
+button.primary:hover{
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.2);
+}
+
+button.secondary:hover{
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.2);
+}
+
+
 
 button.submit:hover{
     background-color: rgb(197, 28, 28);
