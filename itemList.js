@@ -5,33 +5,11 @@ let date = String(DateInfo)
 console.log(date)
 let dt = date
 
+const docContainer = document.getElementById("doc-container")
+
 console.log(dt)
 //Test for multiple item
 //console.log(USER); need to get USER varibale across all files from index
-function Render(id,status,mod_date,due_date){
-    console.log(date)
-    
-    let ul = document.getElementById("itemList");
-    let _id = document.createElement('li');
-    let _mod_date = document.createElement('span');
-    let _status = document.createElement('span');
-    let _due_date = document.createElement('span');
-
-    _status.classList.add("docStatus")
-    _mod_date.classList.add("mod_date")
-    _due_date.classList.add("due_date")
-
-    _id.innerHTML = id;
-    _status.innerHTML = status;
-    _mod_date.innerHTML = mod_date;
-    _due_date.innerHTML = due_date;
-
-    ul.appendChild(_id);
-    ul.appendChild(_status);
-    ul.appendChild(_mod_date);
-    ul.appendChild(_due_date);
-    ul.append();
-}
 
 onValue(itemRef, (snapshot)=>{
         console.log(snapshot)
@@ -39,14 +17,16 @@ onValue(itemRef, (snapshot)=>{
         snapshot.forEach(
             function(ChildSnapshot){
                 console.log(ChildSnapshot.val())
-
+                let doc = ChildSnapshot.val();
                 let status = ChildSnapshot.val().status;
                 let id = ChildSnapshot.val().id;
                 let mod_date = ChildSnapshot.val().mod_date;
                 let due_date = ChildSnapshot.val().due_date;
 
-                Render(id,status,mod_date,due_date)
-                
+                docContainer.innerHTML += `<div class="card">
+                <h5>Folio: ${doc.id}</h4>
+                <h6>Status: ${doc.status} Last Mod: ${doc.mod_date} Due: ${doc.due_date}</h6>
+                </div>`
             }
         )
 });
