@@ -1,5 +1,5 @@
 html,body{
-    background-color: #e6e6e6;
+    background-color: #252525;
 
     font-family: 'Gotham', sans-serif;
 }
@@ -7,7 +7,7 @@ html,body{
 .header{
     text-align: center;
     margin: 15px;
-    color: #922d2d;
+    color: #ffffff;
 }
 
 .actionBar{
@@ -19,7 +19,7 @@ html,body{
 .action{
     text-align: center;
     padding: 5px;
-    margin: 0px;
+    margin: 15px;
     margin-top: 5px;
     width: 150px;
     background-color: #d4d4d4;
@@ -38,9 +38,10 @@ html,body{
 
 .banner{
     text-align: center;
-    background-color: #922d2d;
+    background-color: #00000080;
     padding: 5px;
-    border-radius: 20px;
+    border-top-left-radius: 20px; 
+    border-top-right-radius: 20px;
     color: white;
 }
 
@@ -57,7 +58,6 @@ h1{
 h3{
     margin: 5px;
     font-size: 16px;
-    margin-bottom: 15px;
 }
 
 h4{
@@ -70,9 +70,9 @@ a{
 }
 
 .container{
+    margin-top: 15px;
     margin: 5px;
-    padding: 5px;
-    background-color: rgb(245, 245, 245);
+    background-color: rgb(100, 100, 100);
     border-radius: 20px;
     text-align: center;
 }
