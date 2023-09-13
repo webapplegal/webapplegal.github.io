@@ -11,9 +11,9 @@ html,body{
 }
 
 .actionBar{
-    text-align: center;
+    text-align: left;
     height: auto;
-    background-color: rgb(190, 190, 190);
+    background-color: rgb(118, 118, 118);
 }
 
 .banner{
@@ -80,8 +80,8 @@ button.submit{
 }
 
 button.primary:hover{
-    color: white;
-    background-color: rgb(137, 198, 93);
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
     box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -161,7 +161,7 @@ a.actionlink:hover{
 
 .card:hover{
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
-    background-color: #d1d1d1;
+    background-color: #ffffff;
 }
 
 h1{
