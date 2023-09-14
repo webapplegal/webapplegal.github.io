@@ -8,36 +8,49 @@ let dt = date
 const docContainer = document.getElementById("doc-container")
 const newDocButton = document.getElementById('button-add-doc')
 
-newDocButton.addEventListener('click',()=>{location.href = 'addDoc.html'})
-
-console.log(dt)
-//Test for multiple item
-//console.log(USER); need to get USER varibale across all files from index
+const filterValue = document.getElementById('filter-value')
 
 onValue(itemRef, (snapshot)=>{
-        console.log(snapshot)
-        document.getElementById("itemList").innerHTML = "" // on change, reset to black and re-render
-        docContainer.innerHTML=""
-        snapshot.forEach(
-            function(ChildSnapshot){
-                let doc = ChildSnapshot.val();
-            
-                docContainer.innerHTML += 
-                `<div class="card">
-                    <div class="left-side-card">
-                        <h4>Folio: ${doc.id} </h4>
-                        <h5>Cliente: ${doc.client}</h5>
-                        <h5>Encargado: ${doc.assigned_to}</h5>
-                        <h6>Status: ${doc.status} Last Mod: ${doc.mod_date} Due: ${doc.due_date}</h6>
-                    </div>
-
-                    <div class="right-side-card">
-                        <div id="status-indicator" class="${doc.status}"></div>
-                    </div>
-                </div>`
-            }
-        )
+    console.log(snapshot)
+    docContainer.innerHTML=""
+    snapshot.forEach(
+        function(ChildSnapshot){
+            window.doc = ChildSnapshot.val();
+            Render(doc)
+        }
+    )
+    
 });
 
+filterValue.addEventListener("keypress", function(event) {
+    // If the user presses the "Enter" key on the keyboard
+    if (event.key === "Enter") {
+      // Cancel the default action, if needed
+        event.preventDefault();
+      // Trigger the button element with a click
+        docContainer.innerHTML=""
+        Render(doc)
 
+        //Still not working
+    }
+});
+
+newDocButton.addEventListener('click',()=>{location.href = 'addDoc.html'})
+
+
+function Render(doc){
+    docContainer.innerHTML += 
+                    `<div class="card">
+                        <div class="left-side-card">
+                            <h4>Folio: ${doc.id} </h4>
+                            <h5>Cliente: ${doc.client}</h5>
+                            <h5>Encargado: ${doc.assigned_to}</h5>
+                            <h6>Status: ${doc.status} Last Mod: ${doc.mod_date} Due: ${doc.due_date}</h6>
+                        </div>
+
+                        <div class="right-side-card">
+                            <div id="status-indicator" class="${doc.status}"></div>
+                        </div>
+                    </div>`
+}
     

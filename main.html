@@ -28,17 +28,24 @@
         <div class="actionBar">
             <button class="primary" id="button-add-doc">+ New Document</button>
             <button class="secondary" id="button-del-doc">Delete Document</button>
+        </div>
 
+        <div class="select-filter">
+
+            <select name="Select-Filter" id="filter-selector">
+                <option value="client">Client</option>
+                <option value="status">Status</option>
+            </select>
+
+        </div>
+
+        <div class="select-filter">
+            <input type="text" id="filter-value" class="search">
         </div>
 
         <div class="docContainer" id="doc-container">
-
         </div>
 
-        <div class="existingDocs">
-            <ul id="itemList">
-            </ul>
-        </div>
         
         <script src="itemList.js" type="module"></script>
     </div>
