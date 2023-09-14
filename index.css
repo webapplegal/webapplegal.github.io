@@ -237,17 +237,29 @@ color: gray;
 
 .left-side-card{
     display: inline-block;
-    margin-right: 50px;
+    width: 70%;
+}
+
+.center-side-card{
+    height: auto;
+    display: inline-block;
+    text-align: center;
+    padding-top: 24px;
+    padding-bottom: 24px;
 }
 
 .right-side-card{
+    margin-left: 30px;
     height: auto;
     display: inline-block;
-    margin-left: 30px;
     text-align: right;
+    padding: auto;
+}
+.del{
+    width: 24px;
     padding-top: 24px;
     padding-bottom: 24px;
-
+    opacity: 20%;
 }
 
 .New{
@@ -256,6 +268,20 @@ color: gray;
     height: 24px;
     border-radius: 24px;
     background-color: rgb(120, 186, 120);
+}
+.Open{
+    text-align: right;
+    width: 24px;
+    height: 24px;
+    border-radius: 24px;
+    background-color: rgb(228, 224, 100);
+}
+.Closed{
+    text-align: right;
+    width: 24px;
+    height: 24px;
+    border-radius: 24px;
+    background-color: rgb(157, 157, 157);
 }
 
 .select-filter{
