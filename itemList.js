@@ -20,16 +20,20 @@ onValue(itemRef, (snapshot)=>{
         docContainer.innerHTML=""
         snapshot.forEach(
             function(ChildSnapshot){
-                console.log(ChildSnapshot.val())
                 let doc = ChildSnapshot.val();
-                let status = ChildSnapshot.val().status;
-                let id = ChildSnapshot.val().id;
-                let mod_date = ChildSnapshot.val().mod_date;
-                let due_date = ChildSnapshot.val().due_date;
+            
+                docContainer.innerHTML += 
+                `<div class="card">
+                    <div class="left-side-card">
+                        <h4>Folio: ${doc.id} </h4>
+                        <h5>Cliente: ${doc.client}</h5>
+                        <h5>Encargado: ${doc.assigned_to}</h5>
+                        <h6>Status: ${doc.status} Last Mod: ${doc.mod_date} Due: ${doc.due_date}</h6>
+                    </div>
 
-                docContainer.innerHTML += `<div class="card">
-                <h5>Folio: ${doc.id}</h4>
-                <h6>Status: ${doc.status} Last Mod: ${doc.mod_date} Due: ${doc.due_date}</h6>
+                    <div class="right-side-card">
+                        <div id="status-indicator" class="${doc.status}"></div>
+                    </div>
                 </div>`
             }
         )
