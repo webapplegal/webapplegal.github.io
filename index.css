@@ -52,7 +52,7 @@ a{
 .docContainer{
     overflow:hidden; 
     overflow-y:scroll;
-    height: 400px;
+    height: 500px;
 }
 
 .loginForm{
