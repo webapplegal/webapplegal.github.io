@@ -43,12 +43,16 @@ a{
     margin-top: 15px;
     margin-bottom: 15px;
     margin: 5px;
-    height: 400px;
     background-color: rgb(100, 100, 100);
     border-radius: 20px;
     text-align: center;
+    
+}
+
+.docContainer{
     overflow:hidden; 
     overflow-y:scroll;
+    height: 400px;
 }
 
 .loginForm{
