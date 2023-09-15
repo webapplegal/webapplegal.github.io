@@ -9,14 +9,25 @@ const docContainer = document.getElementById("doc-container")
 const newDocButton = document.getElementById('button-add-doc')
 const filterValue = document.getElementById('filter-value')
 
-onValue(itemRef, (snapshot)=>{
-    console.log(snapshot)
+
+window.parentRef = ref(db,'/');
+
+onValue(parentRef, (snapshot)=>{
     docContainer.innerHTML=""
     snapshot.forEach(
-        function(ChildSnapshot){
-            window.doc = ChildSnapshot.val();
-            Render(doc)
-        }
+            function(ChildSnapshot){
+                        window.folder = ChildSnapshot.val();
+                        console.log(folder)
+                    ChildSnapshot.forEach(
+                        function(GrandChildSnapshot){
+                            window.doc = GrandChildSnapshot.val();
+                            console.log(doc)
+                            if(doc.client==filterValue.value){
+                                Render(doc)
+                            }
+                        }
+                    )
+            }
     )
     
 });
@@ -29,8 +40,11 @@ filterValue.addEventListener("keypress", function(event) {
       // Trigger the button element with a click
         docContainer.innerHTML=""
 
-        update(ref(db,'Documents/00001'),{
-            status: "Open"
+        update(ref(db,'/Flag'),{
+            CHANGE: true
+        });
+        update(ref(db,'/Flag'),{
+            CHANGE: false
         });
         //Still not working, need to device a change flag to trigger onValue code
     }
