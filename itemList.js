@@ -91,8 +91,9 @@ function Render(doc){
                         </div>
 
                         <div class="pdf-view">
-                            <object data="${doc.path}" type="application/pdf" width="80%" height="200px">
-                            </object>
+
+                            <embed src="https://drive.google.com/file/d/1Fv1auAFYFW3dl1q7TL5VbxHUfPCXXVSH/view?usp=sharing" type="application/pdf" width="90%" height="300px" />
+                            
                         </div>
 
                     </div>`
