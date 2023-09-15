@@ -304,9 +304,12 @@ select{
     align-self: center;
     text-align: center;
     margin-top: 5px;
-    width: 90%;
+    width: 99%;
     
 }
 iframe{
-    width: 80%;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
 }
