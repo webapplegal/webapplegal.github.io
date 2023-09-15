@@ -164,7 +164,6 @@ filterSelectorValue.addEventListener("change", function(event) {
         event.preventDefault();
       // Trigger the button element with a click
         docContainer.innerHTML=""
-        UpdateSelector()
         //We do the flag change so the onValue detects a change, but only renders in the grand child level
         update(ref(db,'/Flag'),{
             CHANGE: true
