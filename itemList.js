@@ -9,6 +9,25 @@ const docContainer = document.getElementById("doc-container")
 const newDocButton = document.getElementById('button-add-doc')
 const filterValue = document.getElementById('filter-value')
 const filterSelector = document.getElementById('filter-selector')
+const filterSelectorValue = document.getElementById('filter-selector-value')
+
+if(filterSelector.value=="client"){
+    filterSelectorValue.innerHTML = 
+    `
+        <option value="hp">HP</option>
+        <option value="GoDaddy">GoDaddy</option>
+    `
+}
+
+if(filterSelector.value=="status"){
+    filterSelectorValue.innerHTML = 
+    `
+        <option value="New">New</option>
+        <option value="Open">Open</option>
+        <option value="Closed">Closed</option>
+    `
+}
+
 
 
 window.parentRef = ref(db,'/');
@@ -26,12 +45,12 @@ onValue(parentRef, (snapshot)=>{
 
                             switch(filterSelector.value){
                                 case "client":
-                                    if(doc.client==filterValue.value){
+                                    if(doc.client==filterSelectorValue.value){
                                         Render(doc)
                                     }
                                     break;
                                 case "status":
-                                    if(doc.status==filterValue.value){
+                                    if(doc.status==filterSelectorValue.value){
                                         Render(doc)
                                     }
                                     break;
@@ -47,23 +66,7 @@ onValue(parentRef, (snapshot)=>{
     
 });
 
-filterValue.addEventListener("keypress", function(event) {
-    // If the user presses the "Enter" key on the keyboard
-    if (event.key === "Enter") {
-      // Cancel the default action, if needed
-        event.preventDefault();
-      // Trigger the button element with a click
-        docContainer.innerHTML=""
 
-        //We do the flag change so the onValue detects a change, but only renders in the grand child level
-        update(ref(db,'/Flag'),{
-            CHANGE: true
-        });
-        update(ref(db,'/Flag'),{
-            CHANGE: false
-        });
-    }
-});
 
 newDocButton.addEventListener('click',()=>{location.href = 'addDoc.html'})
 
@@ -89,4 +92,80 @@ function Render(doc){
 
                     </div>`
 }
+
+function UpdateSelector(){
+    filterSelectorValue.innerHTML = ""
     
+    if(filterSelector.value=="client"){
+        filterSelectorValue.innerHTML = 
+        `
+            <option value="hp">HP</option>
+            <option value="GoDaddy">GoDaddy</option>
+        `
+    }
+    
+    if(filterSelector.value=="status"){
+        filterSelectorValue.innerHTML = 
+        `
+            <option value="New">New</option>
+            <option value="Open">Open</option>
+            <option value="Closed">Closed</option>
+        `
+    }
+}
+    
+
+filterValue.addEventListener("keypress", function(event) {
+    // If the user presses the "Enter" key on the keyboard
+    if (event.key === "Enter") {
+      // Cancel the default action, if needed
+        event.preventDefault();
+      // Trigger the button element with a click
+        docContainer.innerHTML=""
+
+        //We do the flag change so the onValue detects a change, but only renders in the grand child level
+        update(ref(db,'/Flag'),{
+            CHANGE: true
+        });
+        update(ref(db,'/Flag'),{
+            CHANGE: false
+        });
+    }
+});
+
+filterSelector.addEventListener("change", function(event) {
+    // If the user presses the "Enter" key on the keyboard
+    
+      // Cancel the default action, if needed
+        event.preventDefault();
+      // Trigger the button element with a click
+        docContainer.innerHTML=""
+        UpdateSelector()
+        //We do the flag change so the onValue detects a change, but only renders in the grand child level
+        update(ref(db,'/Flag'),{
+            CHANGE: true
+        });
+        update(ref(db,'/Flag'),{
+            CHANGE: false
+        });
+    
+});
+
+
+filterSelectorValue.addEventListener("change", function(event) {
+    // If the user presses the "Enter" key on the keyboard
+    
+      // Cancel the default action, if needed
+        event.preventDefault();
+      // Trigger the button element with a click
+        docContainer.innerHTML=""
+        UpdateSelector()
+        //We do the flag change so the onValue detects a change, but only renders in the grand child level
+        update(ref(db,'/Flag'),{
+            CHANGE: true
+        });
+        update(ref(db,'/Flag'),{
+            CHANGE: false
+        });
+    
+});
