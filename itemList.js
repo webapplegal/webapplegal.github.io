@@ -8,6 +8,7 @@ let dt = date
 const docContainer = document.getElementById("doc-container")
 const newDocButton = document.getElementById('button-add-doc')
 const filterValue = document.getElementById('filter-value')
+const filterSelector = document.getElementById('filter-selector')
 
 
 window.parentRef = ref(db,'/');
@@ -22,9 +23,23 @@ onValue(parentRef, (snapshot)=>{
                         function(GrandChildSnapshot){
                             window.doc = GrandChildSnapshot.val();
                             console.log(doc)
-                            if(doc.client==filterValue.value){
-                                Render(doc)
+
+                            switch(filterSelector.value){
+                                case "client":
+                                    if(doc.client==filterValue.value){
+                                        Render(doc)
+                                    }
+                                    break;
+                                case "status":
+                                    if(doc.status==filterValue.value){
+                                        Render(doc)
+                                    }
+                                    break;
+
                             }
+                                
+                                
+
                         }
                     )
             }
@@ -40,13 +55,13 @@ filterValue.addEventListener("keypress", function(event) {
       // Trigger the button element with a click
         docContainer.innerHTML=""
 
+        //We do the flag change so the onValue detects a change, but only renders in the grand child level
         update(ref(db,'/Flag'),{
             CHANGE: true
         });
         update(ref(db,'/Flag'),{
             CHANGE: false
         });
-        //Still not working, need to device a change flag to trigger onValue code
     }
 });
 
