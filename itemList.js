@@ -90,8 +90,11 @@ function Render(doc){
                             <img src="https://png.pngtree.com/png-vector/20190419/ourmid/pngtree-vector-cross-icon-png-image_956622.jpg" alt="delete" class="del" id="delete-cross">
                         </div>
 
-                        <object data="${doc.path}" type="application/pdf" width="80%" height="500px">
-                        
+                        <div class="pdf-view">
+                            <object data="${doc.path}" type="application/pdf" width="80%" height="200px">
+                            </object>
+                        </div>
+
                     </div>`
 }
 
