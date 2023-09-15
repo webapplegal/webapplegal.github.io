@@ -91,7 +91,7 @@ function Render(doc){
                         </div>
 
                         <div class="pdf-view">
-                            <iframe src="https://drive.google.com/file/d/1Fv1auAFYFW3dl1q7TL5VbxHUfPCXXVSH/preview" width="640" height="480" allow="autoplay"></iframe>
+                            <iframe src="https://drive.google.com/file/d/1Fv1auAFYFW3dl1q7TL5VbxHUfPCXXVSH/preview" width="310" height="480" allow="autoplay"></iframe>
                         </div>
 
                     </div>`

@@ -300,8 +300,10 @@ select{
     transition: .2s;
 }
 .pdf-view{
+    align-items: center;
+    align-self: center;
+    text-align: center;
     margin-top: 5px;
     width: 90%;
-    display: flex;
     
 }
