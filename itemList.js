@@ -16,6 +16,7 @@ if(filterSelector.value=="client"){
     `
         <option value="hp">HP</option>
         <option value="GoDaddy">GoDaddy</option>
+         <option value="Rodolfo">Rodolfo</option>
     `
 }
 
