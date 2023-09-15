@@ -17,11 +17,9 @@ onValue(parentRef, (snapshot)=>{
     snapshot.forEach(
             function(ChildSnapshot){
                         window.folder = ChildSnapshot.val();
-                        console.log(folder)
                     ChildSnapshot.forEach(
                         function(GrandChildSnapshot){
                             window.doc = GrandChildSnapshot.val();
-                            console.log(doc)
 
                             switch(filterSelector.value){
                                 case "client":
@@ -50,6 +48,9 @@ onValue(parentRef, (snapshot)=>{
 newDocButton.addEventListener('click',()=>{location.href = 'addDoc.html'})
 
 function Render(doc){
+    let docURL = String(doc.path)
+    let previewURL = docURL.substring(0, docURL.indexOf("/view"))
+
     docContainer.innerHTML += 
                     `<div class="card">
                         <div class="left-side-card">
@@ -69,7 +70,7 @@ function Render(doc){
                         </div>
 
                         <div class="pdf-view"}>
-                            <iframe src="${doc.path+"/preview"}" allow="autoplay"></iframe>
+                            <iframe src="${previewURL+"/preview#zoom=200%"}" allow="autoplay"></iframe>
                         </div>
 
                     </div>`
