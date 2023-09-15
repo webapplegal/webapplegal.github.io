@@ -16,7 +16,7 @@ if(filterSelector.value=="client"){
     `
         <option value="hp">HP</option>
         <option value="GoDaddy">GoDaddy</option>
-         <option value="Rodolfo">Rodolfo</option>
+        <option value="Rodolfo">Rodolfo</option>
     `
 }
 
@@ -117,25 +117,6 @@ function UpdateSelector(){
         `
     }
 }
-    
-
-filterValue.addEventListener("keypress", function(event) {
-    // If the user presses the "Enter" key on the keyboard
-    if (event.key === "Enter") {
-      // Cancel the default action, if needed
-        event.preventDefault();
-      // Trigger the button element with a click
-        docContainer.innerHTML=""
-
-        //We do the flag change so the onValue detects a change, but only renders in the grand child level
-        update(ref(db,'/Flag'),{
-            CHANGE: true
-        });
-        update(ref(db,'/Flag'),{
-            CHANGE: false
-        });
-    }
-});
 
 filterSelector.addEventListener("change", function(event) {
     // If the user presses the "Enter" key on the keyboard
