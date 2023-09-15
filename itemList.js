@@ -1,5 +1,7 @@
 import {getDatabase, set, get, update, remove, ref, child, onValue} from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js"; 
 
+const dbRef = ref(getDatabase());
+
 window.parentRef = ref(db,'/');
 let DateInfo = new Date()
 let date = String(DateInfo)
@@ -51,6 +53,7 @@ function Render(doc){
     let docURL = String(doc.path)
     let previewURL = docURL.substring(0, docURL.indexOf("/view"))
 
+    // I need for the PDF view to be visible only after I click on the
     docContainer.innerHTML += 
                     `<div class="card">
                         <div class="left-side-card">
@@ -76,20 +79,28 @@ function Render(doc){
                     </div>`
 }
 
+
 function UpdateSelector(){
     filterSelectorValue.innerHTML = ""
-    
+
     if(filterSelector.value=="client"){
-        filterSelectorValue.innerHTML = 
-        `
-            <option value="hp">HP</option>
-            <option value="GoDaddy">GoDaddy</option>
-            <option value="Rodolfo">Rodolfo</option>
-        `
+        filterSelectorValue.innerHTML = ""
+        get(child(dbRef, "Documents")).then((snapshot) => {
+            if (snapshot.exists()) {
+                snapshot.forEach(
+                    function(GrandChild){
+                        let doc2 = GrandChild.val()
+                        console.log(doc2)
+                        filterSelectorValue.innerHTML +=
+                        `
+                        <option value="${doc2.client}">${doc2.client}</option>
+                        `
+                })
+            } 
+        })
     }
     
     if(filterSelector.value=="status"){
-        filterSelectorValue.innerHTML = 
         `
             <option value="New">New</option>
             <option value="Open">Open</option>
