@@ -1,37 +1,16 @@
 import {getDatabase, set, get, update, remove, ref, child, onValue} from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js"; 
 
+window.parentRef = ref(db,'/');
 let DateInfo = new Date()
 let date = String(DateInfo)
-console.log(date)
 let dt = date
 
 const docContainer = document.getElementById("doc-container")
 const newDocButton = document.getElementById('button-add-doc')
-const filterValue = document.getElementById('filter-value')
 const filterSelector = document.getElementById('filter-selector')
 const filterSelectorValue = document.getElementById('filter-selector-value')
 
-if(filterSelector.value=="client"){
-    filterSelectorValue.innerHTML = 
-    `
-        <option value="hp">HP</option>
-        <option value="GoDaddy">GoDaddy</option>
-        <option value="Rodolfo">Rodolfo</option>
-    `
-}
-
-if(filterSelector.value=="status"){
-    filterSelectorValue.innerHTML = 
-    `
-        <option value="New">New</option>
-        <option value="Open">Open</option>
-        <option value="Closed">Closed</option>
-    `
-}
-
-
-
-window.parentRef = ref(db,'/');
+UpdateSelector()
 
 onValue(parentRef, (snapshot)=>{
     docContainer.innerHTML=""
@@ -68,9 +47,7 @@ onValue(parentRef, (snapshot)=>{
 });
 
 
-
 newDocButton.addEventListener('click',()=>{location.href = 'addDoc.html'})
-
 
 function Render(doc){
     docContainer.innerHTML += 
@@ -105,6 +82,7 @@ function UpdateSelector(){
         `
             <option value="hp">HP</option>
             <option value="GoDaddy">GoDaddy</option>
+            <option value="Rodolfo">Rodolfo</option>
         `
     }
     
