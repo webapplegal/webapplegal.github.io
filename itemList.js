@@ -67,7 +67,7 @@ function Render(doc){
                         <div class="right-side-card">
                         </div>
 
-                        <div class="pdf-view">
+                        <div class="pdf-view"}>
                             <iframe src="${doc.path+"/preview"}" allow="autoplay"></iframe>
                         </div>
 
