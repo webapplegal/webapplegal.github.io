@@ -70,7 +70,7 @@ function Render(doc){
                         </div>
 
                         <div class="pdf-view"}>
-                            <iframe src="${previewURL+"/preview#zoom=200%"}" allow="autoplay"></iframe>
+                            <iframe src="${previewURL+"/preview"}" allow="autoplay"></iframe>
                         </div>
 
                     </div>`
