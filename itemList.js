@@ -91,7 +91,7 @@ function Render(doc){
                         </div>
 
                         <div class="pdf-view">
-                            <iframe src="${doc.path+"/preview"}" width="310" height="480" allow="autoplay"></iframe>
+                            <iframe src="${doc.path+"/preview"}" allow="autoplay"></iframe>
                         </div>
 
                     </div>`
