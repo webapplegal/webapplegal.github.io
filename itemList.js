@@ -87,7 +87,6 @@ function Render(doc){
 
 
                         <div class="right-side-card">
-                            <img src="https://png.pngtree.com/png-vector/20190419/ourmid/pngtree-vector-cross-icon-png-image_956622.jpg" alt="delete" class="del" id="delete-cross">
                         </div>
 
                         <div class="pdf-view">
