@@ -246,14 +246,16 @@ color: gray;
     text-align: center;
     padding-top: 24px;
     padding-bottom: 24px;
+    width: 50px;
 }
 
 .right-side-card{
-    margin-left: 30px;
     height: auto;
     display: inline-block;
     text-align: right;
     padding: auto;
+    padding-top: 24px;
+    padding-bottom: 24px;
 }
 .del{
     width: 24px;

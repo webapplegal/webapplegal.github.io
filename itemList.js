@@ -60,11 +60,12 @@ function Render(doc){
                         </div>
 
                         <div class="center-side-card">
-                            <div id="status-indicator" class="${doc.status}"></div>
+                            
                         </div>
 
 
                         <div class="right-side-card">
+                            <div id="status-indicator" class="${doc.status}"></div>
                         </div>
 
                         <div class="pdf-view"}>
