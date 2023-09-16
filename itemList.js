@@ -101,7 +101,7 @@ function UpdateSelector(){
     }
     
     if(filterSelector.value=="status"){
-        filterSelector.innerHTML =
+        filterSelectorValue.innerHTML =
         `
             <option value="New">New</option>
             <option value="Open">Open</option>
