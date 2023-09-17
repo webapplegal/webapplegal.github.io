@@ -2,7 +2,7 @@ import {getDatabase, set, get, update, remove, ref, child, onValue} from "https:
 
 const dbRef = ref(getDatabase());
 
-window.parentRef = ref(db,'/');
+window.rootDir = ref(db,'/');
 let DateInfo = new Date()
 let date = String(DateInfo)
 let dt = date
@@ -13,17 +13,20 @@ const filterSelector = document.getElementById('filter-selector')
 const filterSelectorValue = document.getElementById('filter-selector-value')
 
 UpdateSelector()
+newDocButton.addEventListener('click',()=>{location.href = 'addDoc.html'})
 
-onValue(parentRef, (snapshot)=>{
+onValue(rootDir, (snapshot)=>{
     docContainer.innerHTML=""
     snapshot.forEach(
             function(ChildSnapshot){
                         window.folder = ChildSnapshot.val();
                     ChildSnapshot.forEach(
                         function(GrandChildSnapshot){
-                            window.doc = GrandChildSnapshot.val();
+                            GrandChildSnapshot.forEach(
+                                function (GGChildSnap){
+                                    window.doc = GGChildSnap.val();
 
-                            switch(filterSelector.value){
+                                switch(filterSelector.value){
                                 case "client":
                                     if(doc.client==filterSelectorValue.value){
                                         Render(doc)
@@ -36,9 +39,10 @@ onValue(parentRef, (snapshot)=>{
                                     break;
 
                             }
-                                
-                                
 
+                                }
+                            )
+                                
                         }
                     )
             }
@@ -47,7 +51,6 @@ onValue(parentRef, (snapshot)=>{
 });
 
 
-newDocButton.addEventListener('click',()=>{location.href = 'addDoc.html'})
 
 function Render(doc){
     let docURL = String(doc.path)
@@ -81,23 +84,23 @@ function Render(doc){
 
 
 function UpdateSelector(){
+    update(ref(db,'/Flag'),{
+        CHANGE: true
+    });
+    update(ref(db,'/Flag'),{
+        CHANGE: false
+    });
+
     filterSelectorValue.innerHTML = ""
 
     if(filterSelector.value=="client"){
-        filterSelectorValue.innerHTML = ""
-        get(child(dbRef, "Documents")).then((snapshot) => {
-            if (snapshot.exists()) {
-                snapshot.forEach(
-                    function(GrandChild){
-                        let doc2 = GrandChild.val()
-                        console.log(doc2)
-                        filterSelectorValue.innerHTML +=
-                        `
-                        <option value="${doc2.client}">${doc2.client}</option>
-                        `
-                })
-            } 
-        })
+
+        // Need to find way to get Element IDs from Client Directory in Firebase with get() functionx
+        filterSelectorValue.innerHTML =
+        `
+            <option value="GoDaddy">GoDaddy</option>
+            <option value="Volaris">Volaris</option>
+        `  
     }
     
     if(filterSelector.value=="status"){
@@ -108,6 +111,8 @@ function UpdateSelector(){
             <option value="Closed">Closed</option>
         `
     }
+
+    
 }
 
 filterSelector.addEventListener("change", function(event) {

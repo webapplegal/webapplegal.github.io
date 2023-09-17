@@ -31,7 +31,7 @@ function addItem(){
     }
     else{
         //looks for Item typed in in DB
-        get(child(dbref,'Documents/'+fieldID.value))
+        get(child(dbref,'Clients/'+fieldClient.value+"/"+fieldID.value))
         .then((snapshot)=>{
             if(canAdd=="true"){ //Checks users permisions
                 if(snapshot.exists()){ //If found, user must choose other ID
@@ -39,7 +39,7 @@ function addItem(){
                     return
                 }
                 else{ //If item doesnt exist, adds it to DB with default parameters
-                    set(ref(db,'Documents/'+fieldID.value),{
+                    set(ref(db,'Clients/'+fieldClient.value+"/"+fieldID.value),{
                         id: fieldID.value,
                         client: fieldClient.value,
                         assigned_to: fieldAssignee.value,
