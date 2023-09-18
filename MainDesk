@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="indexDesk.css">
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    
+    <script src="dbconfig.js" type="module"></script>
+
+</head>
+<body>
+
+    <div class="header">
+            <h1>ABOGADOS & CO.</h1>
+            <h3>Despacho fiscal</h3>
+    </div>
+
+    <div class="container">
+            <div class="banner">
+                <h3>Main</h3>
+            </div>
+
+            <div class="sidebar">
+
+                <button class="primary" id="button-add-doc">+ New Document</button>
+                <button class="primary" id="button-del-doc">Delete Document</button>
+
+            </div>
+
+            <div class="main-content">
+
+                <div class="selectbar">
+                    <div class="navitem">
+                        <select name="Select-Filter" id="filter-selector" class="select-filter">
+                            <option value="client">Client</option>
+                            <option value="status">Status</option>
+                        </select>
+                    </div>
+            
+                    <div class="navitem">
+                        <select name="filter-selector-value" id="filter-selector-value" class="select-filter">
+                            
+                        </select>
+                    </div>
+                </div>
+                
+            <div class="docContainer" id="doc-container">
+            </div>  
+
+            </div>
+
+            
+
+            
+            <script src="itemList.js" type="module"></script>
+    </div>
+
+
+</body>
+</html>
