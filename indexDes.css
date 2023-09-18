@@ -12,213 +12,84 @@ body{
 
 .header{
     text-align: center;
-    margin: 15px;
-    color: #ffffff;
-}
-
-.sidebar{
-    text-align: center;
-    padding-left: 10px;
-    padding-right: 10px;
-    height: auto;
-    background-color: rgba(255, 255, 255, 0.5);
-}
-
-.main-content{
-
-}
-
-.banner{
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 5px;
-    border-top-left-radius: 20px; 
-    border-top-right-radius: 20px;
-    color: black;
-}
-
-.navlinks{
-    color: rgb(140, 28, 28);
-    text-align: center;
-}
-
-
-
-a{
-    text-decoration: none;
+    margin: 5px;
+    margin-bottom: 10px;
+    color: #000000;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    padding: 10px;
 }
 
 .container{
     margin-top: 15px;
     margin-bottom: 15px;
     margin: 5px;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.6);
     border-radius: 20px;
     text-align: center;
-    
+}
+
+.titleBanner{
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 5px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    color: black;
+}
+
+.sidebar{
+    margin-top: 10px;
+    background-color: rgb(255, 255, 255,0.4);
+    border-radius: 15px;
+    text-align: center;
+    width: 19%;
+    height: 600px;
+    display: inline-block;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+
+.main-content{
+    margin-top: 10px;
+    background-color: rgb(255, 255, 255,0.4);
+    border-radius: 15px;
+    width: 79%;
+    text-align: center;
+    height: 600px;
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
 }
 
 .docContainer{
+    margin-bottom: 5px;
     overflow:hidden; 
     overflow-y:scroll;
-    height: 500px;
+    height: 600px;
 }
 
-.loginForm{
-    padding: 15px;
-    margin: 15px;
-}
-
-input.login{
-    text-align: center;
-    height: 24px;
-    width: 200px;
-    margin: 10px;
-    padding: auto;
-    border: 0;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-    transition: .2s;
-}
-
-input.search{
-    text-align: left;
-    height: 24px;
-    width: 150px;
-    margin: 5px;
-    padding: auto;
-    border: 0;
-}
-
-input.login:hover{
-    width: 210px;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
-}
-
-button.submit{
-    text-align: center;
-    background-color: #922d2d;
-    color: white;
-    width: 210px;
-    margin: 10px;
-    padding: 15px;
-    border: 0;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-    transition: .2s;
-}
-
-
-
-button.primary{
-    font-size: 18px;
-    text-align: center;  
-    background-color: rgb(213, 213, 213);
-    color: black;
-    width: 48%;
-    margin-top: 5px;
+.sideContainer{
+    padding: 5px;
+    overflow:hidden; 
+    overflow-y:scroll;
+    height: 590px;
     margin-bottom: 5px;
-    padding: 5px;
-    border: 0;
-    border-radius: 5px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-    transition: .2s;
 }
 
-button.secondary{
-    font-size: 18px;
-    text-align: center;  
-    background-color:rgba(213, 213, 213, 0);
-    color: black;
-    width: 48%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 5px;
-    border: 1px black solid;
-    border-radius: 5px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-    transition: .2s;
-}
-
-button.primary:hover{
-    color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
-    box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.2);
-}
-
-button.secondary:hover{
-    color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
-    box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.2);
-}
-
-
-
-button.submit:hover{
-    background-color: rgb(197, 28, 28);
-    width: 240px;
-    box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.2);
+a{
+    text-decoration: none;
 }
 
 .existingDocs{
-    text-align: left;
-    padding: 10px;
-}
 
-ul{
-    list-style: none;
-    padding: 5px;
-}
-
-li{
-    background-color: #ececec;
-    padding: 5px;
-    margin: 5px;
-    border-radius: 10px;
-}
-
-a.actionlink{
-    color: black;
-}
-a.actionlink:hover{
-    color: white;
 }
 
 
-.status{
-    padding: 0px;
-    margin-left: 20px;
-    margin-right: 5px;
-    color: gray;
-}
-.due_date{
-    padding: 0px;
-    margin-left: 5px;
-    margin-right: 5px;
-    color: gray;
-}
-.mod_date{
-    padding: 0px;
-    margin-left: 5px;
-    margin-right: 5px;
-    color: gray;
-}
 
-.card{
-    text-align: left;
-    margin: 15px;
-    padding: 10px;
-    background-color: #f1f1f1;
-    border-radius: 10px;
-    border: 0px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-    transition: .2s;
-}
 
-.card:hover{
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
-    background-color: #ffffff;
-}
+
 
 h1{
     font-size: 24px;
@@ -266,13 +137,6 @@ color: gray;
     padding-top: 24px;
     padding-bottom: 24px;
 }
-.del{
-    width: 24px;
-    padding-top: 24px;
-    padding-bottom: 24px;
-    opacity: 20%;
-}
-
 .New{
     text-align: right;
     width: 24px;
@@ -294,52 +158,6 @@ color: gray;
     border-radius: 24px;
     background-color: rgb(157, 157, 157);
 }
-
-select.select-filter{
-    background-color: white;
-    width:50px;
-    height: auto;
-    padding: 10px;
-    width:100px;
-    margin-top: 10px;
-    display: inline-block;
-
-    border-radius: 5px;
-}
-
-.selectbar{
-    padding-left: 15px;
-    text-align: left;
-}
-
-.navitem{
-    display: inline-block;
-}
-
-
-select.select-filter{
-    background-color: white;
-    width:100px;
-    height: auto;
-    padding: 5px;
-    width:100px;
-    margin-top: 10px;
-
-    margin-bottom: 10px;
-    display: inline-block;
-    border-radius: 5px;
-}
-
-select{
-    font-size: 14px;
-    text-align: center;  
-    background-color: rgb(213, 213, 213);
-    color: black;
-    padding: 5px;
-    border: 0;
-    border-radius: 5px;
-    transition: .2s;
-}
 .pdf-view{
     align-items: center;
     align-self: center;
@@ -353,4 +171,38 @@ iframe{
     align-items: center;
     align-content: center;
     width: 100%;
+}
+.status{
+    padding: 0px;
+    margin-left: 20px;
+    margin-right: 5px;
+    color: gray;
+}
+.due_date{
+    padding: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: gray;
+}
+.mod_date{
+    padding: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: gray;
+}
+
+.card{
+    text-align: left;
+    margin: 15px;
+    padding: 10px;
+    background-color: rgb(255, 255, 255,0.6);
+    border-radius: 10px;
+    border: 0px;
+    transition: .2s;
+}
+
+.card:hover{
+
+    background-color: rgb(255, 255, 255,0.9);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
