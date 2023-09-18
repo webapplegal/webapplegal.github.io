@@ -293,6 +293,8 @@ color: gray;
 }
 
 .select-filter{
+    background-color:#ffffff;
+    width:100px;
     margin-top: 10px;
     display: inline-block;
 }
