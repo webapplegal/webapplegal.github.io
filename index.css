@@ -1,6 +1,12 @@
-html,body{
-    background-color: #252525;
-
+html{
+    font-family: 'Gotham', sans-serif;
+}
+body{
+    background-image: url('https://static1.squarespace.com/static/5e949a92e17d55230cd1d44f/t/61e1db2ae7f92e34cf8316ed/1642191659446/Green_MW_Mac.png');
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
     font-family: 'Gotham', sans-serif;
 }
 
@@ -16,16 +22,16 @@ html,body{
     padding-right: 10px;
 
     height: auto;
-    background-color: rgb(118, 118, 118);
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 .banner{
     text-align: center;
-    background-color: #00000080;
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 5px;
     border-top-left-radius: 20px; 
     border-top-right-radius: 20px;
-    color: white;
+    color: black;
 }
 
 .navlinks{
@@ -43,7 +49,7 @@ a{
     margin-top: 15px;
     margin-bottom: 15px;
     margin: 5px;
-    background-color: rgb(100, 100, 100);
+    background-color: rgba(255, 255, 255, 0.7);
     border-radius: 20px;
     text-align: center;
     
