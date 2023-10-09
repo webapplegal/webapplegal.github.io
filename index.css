@@ -8,6 +8,7 @@ html{
 }
 body{
     font-family: 'Gotham', sans-serif;
+    font-size: 16px;
 }
 
 .header{
@@ -355,4 +356,24 @@ iframe{
     align-items: center;
     align-content: center;
     width: 100%;
+}
+
+.folio{
+    width: 5%;
+}
+.cliente{
+    width: 35%;
+}
+.encargado{
+    width: 25%;
+}
+.statusTxt{
+    width: 15%;
+}
+.modDate{
+    width: 10%;
+}
+
+li{
+    display: inline-block;
 }
