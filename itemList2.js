@@ -15,27 +15,23 @@ function Render(doc){
 
     let _folio = document.createElement('li');
     let _cliente = document.createElement('li');
-    let _encargado = document.createElement('li');
     let _status = document.createElement('li');
     let _mod_date = document.createElement('li');
     let _pdf = document.createElement('span');
 
     _folio.classList.add("folio")
     _cliente.classList.add("cliente")
-    _encargado.classList.add("encargado")
     _status.classList.add("statusTxt")
     _mod_date.classList.add("modDate")
     
-    _pdf.innerHTML = '';
-    _folio.innerHTML = doc.id;
-    _cliente.innerHTML = doc.client;
-    _encargado.innerHTML = doc.assigned_to;
+    _pdf.innerHTML = `<br>`;
+    _folio.innerHTML = "ID: "+doc.id;
+    _cliente.innerHTML = "Client: "+doc.client+"    Assigned to: "+doc.assigned_to;
     _status.innerHTML = doc.status;
     _mod_date.innerHTML = doc.start_date;
 
     ul.appendChild(_folio);
     ul.appendChild(_cliente);
-    ul.appendChild(_encargado);
     ul.appendChild(_status);
     ul.appendChild(_mod_date);
     ul.appendChild(_pdf);
@@ -45,14 +41,14 @@ function Render(doc){
     _folio.addEventListener("click", () => {
         if(subvisible){
             subvisible=false;
-            _pdf.innerHTML = '';
+            _pdf.innerHTML = `<br>`;
         }
         else{
             subvisible=true;
             _pdf.innerHTML = 
             `<div class="pdf-view"}>
             <iframe src="${previewURL+"/preview"}" allow="autoplay"></iframe>
-            </div>`;
+            </div><br>`;
         }
     }
     );
