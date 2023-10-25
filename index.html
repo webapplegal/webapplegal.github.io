@@ -20,6 +20,31 @@
         localStorage.setItem("canAdd","false");
         localStorage.setItem("canClose","false");
     </script>
+    <style>
+        html,
+        body {
+          padding: 0;
+          margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        .wrapper {
+          padding: 0 4rem;
+        }
+        #canvas {
+          position: absolute;
+        }
+        #scanned {
+          display: flex;
+          flex-direction: row;
+          gap:1rem;
+        }
+        #video-wrapper {
+          height: 480px;
+          position: relative;
+          border-radius: 10px;
+          overflow: hidden;
+        }
+      </style>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
