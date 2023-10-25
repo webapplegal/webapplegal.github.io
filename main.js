@@ -48,6 +48,7 @@ const codesProxy = new Proxy(codes, {
 
     // Append Custom element to scanned container
     scanned.appendChild(temp);
+    scanned.innerHTML = value.rawValue;
     return true;
   }
 });
