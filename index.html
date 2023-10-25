@@ -20,30 +20,55 @@
         localStorage.setItem("canAdd","false");
         localStorage.setItem("canClose","false");
     </script>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
     <div class="header">
-            <h1>ABOGADOS & CO.</h1>
-            <h3>Despacho fiscal</h3>
+            <h1>BAR CODE SCANNER</h1>
     </div>
 
-    <div class="container">
-        <div class="banner">
-            <h3>Login</h3>
-        </div>
-        <div class="loginForm">
-            <input type="text" placeholder="Username" id="enterUsername" class="login"><br>
-            <input type="password" placeholder="Password" id="enterPassword" class="login"><br>
-            <button class="submit" id="loginSubmit">Submit</button>
-        </div>
-    </div>
+    <template id="scaned-item">
+        <style>
+          .wrapper {
+            --gradient-start: #c471ed;
+            --gradient-end: #f7797d;
+            border: none;
+            border-radius: 1rem;
+            padding: 1rem;
+            background: linear-gradient(var(--gradient-start), var(--gradient-end));
+            box-shadow: 0 3px -3px 10px #000;
+          }
+          .wrapper span {
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            display: block;
+          }
+        </style>
 
-    <div class="navlinks">
-        <a href="register.html">Register</a>
-    </div>
+        <div class="wrapper">
+          <span>ID: <slot name="raw"></slot></span>
+        </div>
+
+    </template>
+
+    <div class="wrapper">
+        <div style="display: flex; gap: 1rem">
+          <div id="video-wrapper">
+            <canvas id="canvas" width="640" height="480"></canvas>
+            <video id="video" width="640" height="480" autoplay></video>
+          </div>
+
+          <div>
+            <h1>Recently Scanned</h1>
+            <div id="scanned"></div>
+          </div>
+
+        </div>
+      </div>
+
+    
 
     <script src="index.js" type="module"></script>
-
+    <script src="./main.js" async></script>
 </body>
 </html>

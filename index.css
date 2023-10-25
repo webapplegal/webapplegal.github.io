@@ -377,3 +377,10 @@ iframe{
 li{
     display: inline-block;
 }
+
+#video-wrapper {
+    height: 480px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+  }
