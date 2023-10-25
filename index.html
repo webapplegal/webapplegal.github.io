@@ -45,6 +45,7 @@
           overflow: hidden;
         }
       </style>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -70,9 +71,7 @@
           }
         </style>
 
-        <div class="wrapper">
-          <span>ID: <slot name="raw"></slot></span>
-        </div>
+        
 
     </template>
 
@@ -83,15 +82,12 @@
             <video id="video" width="640" height="480" autoplay></video>
           </div>
 
-          <div>
-            <h1>Recently Scanned</h1>
-            <div id="scanned"></div>
-          </div>
-
         </div>
-      </div>
+    </div>
 
-    
+    <div class="wrapper">
+        <span>Location ID: <slot name="raw"></slot></span>
+    </div>
 
     <script src="index.js" type="module"></script>
     <script src="./main.js" async></script>
