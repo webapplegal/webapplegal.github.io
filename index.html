@@ -1,91 +1,37 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Placeholder Company</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="index.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ESCALON - Login</title>
+        <script type="module" src="dbconfig.js"></script>
+        <script type="module" src="login.js"></script>
 
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
-    
-    <script src="dbconfig.js" type="module"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+       
+        <link rel="stylesheet" href="login.css">
 
-    <script type="module">
-        //at login page, permisions are revoked
-        localStorage.setItem("USER","");
-        localStorage.setItem("canEdit","false");
-        localStorage.setItem("canAdd","false");
-        localStorage.setItem("canClose","false");
-    </script>
-    <style>
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: Arial, Helvetica, sans-serif;
-        }
-        .wrapper {
-          padding: 0 4rem;
-        }
-        #canvas {
-          position: absolute;
-        }
+    </head>
 
-        #video-wrapper {
-          height: 480px;
-          position: relative;
-          border-radius: 10px;
-          overflow: hidden;
-        }
-      </style>
+    <body style="text-align: center;">
+        <div id="contenedor" class="contenedor" style="text-align: center;">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-    <div class="header">
-            <h1>BAR CODE SCANNER</h1>
-    </div>
+            <div id="logo-container" class="logo-container">
+                <img src="https://www.signauta.com/wp-content/uploads/2017/03/escalon.jpg" alt="logo" id="logo">    
+            </div>
 
-    <template id="scaned-item">
-        <style>
-          .wrapper {
-            --gradient-start: #c471ed;
-            --gradient-end: #f7797d;
-            border: none;
-            border-radius: 1rem;
-            padding: 1rem;
-            background: linear-gradient(var(--gradient-start), var(--gradient-end));
-            box-shadow: 0 3px -3px 10px #000;
-          }
-          .wrapper span {
-            font-family: Arial, Helvetica, sans-serif;
-            color: white;
-            display: block;
-          }
-        </style>
-
-        
-
-    </template>
-
-    <div class="wrapper">
-        <div style="display: flex; gap: 1rem">
-          <div id="video-wrapper">
-            <canvas id="canvas" width="640" height="480"></canvas>
-            <video id="video" width="640" height="480" autoplay></video>
-          </div>
+            <div id="login-ui" class="login-ui">
+                <input type="text" placeholder="Usuario" id="username-field">
+                <br>
+                <input type="password" placeholder="Contraseña" id="password-field">
+                <br>
+                <button id="login-submit" class="login-submit">Ingresar</button>
+            </div>
 
         </div>
-    </div>
+    </body>
 
-    <div class="wrapper">
-        <span>Location ID: <slot name="raw"></slot></span>
-        <div id="scanned"></div>
-    </div>
-
-    <script src="./main.js" async></script>
-</body>
 </html>

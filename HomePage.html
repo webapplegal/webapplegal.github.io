@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+
+    <script type="module" src="dbConfig.js"></script>
+    <script type="module" src="main.js"></script>
+    <title>ESLABON - ERP</title>
+    
+</head>
+
+<body>
+    <div id="nav-bar" class="nav-bar">
+        <a href="qrScan.html" id="back-link">←Atras</a>
+        <div style="text-align: right;">
+        <span id="welcome">Bienvenido:</span> <span id="loggedUser" style="font-weight: bold;"></span>
+        </div>
+    </div>
+
+    <div id="contenedor" class="contenedor" style="text-align: center;">
+        <div id="titles-bar" class="titles-bar">
+            <div id="p50-div" class="p50-div" style="text-align: left;">
+                <span style="font-weight: bold;">Ruta:</span><span id="route_id">1</span>
+                <br>
+                <span>Loc_ID: </span><span id="Loc_ID">001</span>
+            </div>
+        
+            <div id="p50-div" class="p50-div" style="text-align: right;">
+                <span id="Loc_RFC" style="font-weight: bold;">CAGC0007132L3</span>
+                <br>
+                <span id="Loc_Name">Santa Clara SA. de CV.</span>
+            </div>
+        </div>
+
+        <div style="padding: 20px; padding-bottom: 5px; margin: 0;">
+            <select name="Articulos" id="item-selector" class="add-to-list" style="width: 240px; margin-right: 5px;">
+                <option value="">Articulos</option>
+                <option value="Leche - Bronca">Leche - Bronca</option>
+                <option value="Leche - Entera">Leche - Entera</option>
+                <option value="Leche - Deslac">Leche - Deslac.</option>
+
+            </select>
+            <input type="number" id="quantity-field" class="add-to-list" style="width: 80px;" placeholder="Cantidad">
+        </div>
+        <div style="text-align: right; padding-right: 20px; margin-top: 5px;">
+            <button id="add-button">Añadir</button>
+        </div>
+        <h1 style="margin: 5px; font-size: 18px;">Articulos:</h1>
+        <div id="route-table">
+            
+            <ul style="list-style: none; padding: 0;" id="item-list">
+                
+            </ul>
+        </div>
+
+        <button id="close-order-button" class="continue-button">Continuar →</button>
+
+
+    </div>
+
+
+
+
+    <div id="footer" class="footer">
+        <div class="p50-div" style="text-align: left;">
+            <button id="qr-button">QR</button>
+        </div>
+        <div class="p50-div" style="text-align: right;">
+            <button id="sign-off-button">Cerrar Sesion</button>
+        </div>
+    </div>
+    
+
+</body>
+</html>

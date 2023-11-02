@@ -8,6 +8,18 @@ if(USER==null){
     location.href = "index.html"
 }
 
+var video = document.querySelector("#videoElement");
+
+if (navigator.mediaDevices.getUserMedia) {
+  navigator.mediaDevices.getUserMedia({ video: true })
+    .then(function (stream) {
+      video.srcObject = stream;
+    })
+    .catch(function (err0r) {
+      console.log("Something went wrong!");
+    });
+}
+
 window.db = getDatabase();
 window.UsersDir = ref(db,'Users/');
 window.LocIdDir = ref(db,'Loc_ID/');

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="qr.css">
+
+    <script type="module" src="dbConfig.js"></script>
+    <script type="module" src="qr.js"></script>
+    <title>ESLABON - QR</title>
+    
+</head>
+
+<body>
+    <div id="nav-bar" class="nav-bar">
+        <a href="index.html" id="back-link">←Atras</a>
+        <div style="text-align: right;">
+        <span id="welcome">Bienvenido:</span> <span id="loggedUser" style="font-weight: bold;"></span>
+        </div>
+    </div>
+
+    <div id="contenedor" class="contenedor" style="text-align: center;">
+        <br>
+        <div id="container">
+            <video autoplay="true" id="videoElement">
+            
+            </video>
+        </div>
+
+        <br>
+
+        <button id="close-qr-button" class="continue-button" onclick="location.href='HomePage.html'">Continuar →</button>
+
+
+    </div>
+
+
+    <div id="footer" class="footer">
+        <div class="p50-div" style="text-align: left;">
+            <button id="qr-button">QR</button>
+        </div>
+        <div class="p50-div" style="text-align: right;">
+            <button id="sign-off-button">Cerrar Sesion</button>
+        </div>
+    </div>
+    
+
+</body>
+</html>
