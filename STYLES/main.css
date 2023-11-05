@@ -246,7 +246,7 @@ li:hover{
 .li-text{
     display: flex;
     flex-direction: row;
-    width: 150px;
+    width: 120px;
     height: 25px;
     flex-wrap: wrap;
 }
