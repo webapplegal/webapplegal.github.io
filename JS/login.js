@@ -34,6 +34,7 @@ function CredentialValidation(usernameToValidate,passwordToValidate){
                 
                 if(snapshot.val().password == passwordToValidate){
                     localStorage.setItem("USER",usernameToValidate);
+                    localStorage.setItem("RUTA",snapshot.val().ruta);
                     sessionStorage.setItem("USER",usernameToValidate);
                     console.log("Password correct")
                     location.href = "qrScan.html"

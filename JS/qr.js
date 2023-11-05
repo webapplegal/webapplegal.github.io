@@ -39,9 +39,9 @@ signoff_button.addEventListener("click",()=>{
     location.href = "index.html"
 })
 
-const addButton = document.getElementById("add-button")
-addButton.addEventListener("click",()=>{
-    selectedItem.value==""||selectedQuantity.value==""? alert("Revisa que Articulo o Cantidad no este vacio."):itemList.innerHTML += `<li><span>${selectedItem.value}</span><span class="cuant">${selectedQuantity.value} L</span></li>`
-    
+const continue_button = document.getElementById("close-qr-button")
+continue_button.addEventListener("click",()=>{
+  localStorage.setItem("Loc_ID",document.getElementById('Loc_ID-input').value);
+  location.href='order.html'
 })
 

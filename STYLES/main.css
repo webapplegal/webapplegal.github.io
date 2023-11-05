@@ -214,8 +214,8 @@ input{
 li{
     gap: 1px;
     text-align: left;
-    padding: 5px;
-    padding-left: 20px;
+    padding: 8px;
+    padding-left: 10px;
     margin: 5px;
     margin-left: 20px;
     margin-right: 20px;
@@ -227,7 +227,53 @@ li:hover{
     background-color: orange;
 }
 
-.cuant{
-    margin-left: 70%;
+
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.delete-li{ 
+    display: flex;
+    flex-direction: row;
+    width: 50px;
+    height: 25px;
+    flex-wrap: wrap;  
+}
+
+.li-text{
+    display: flex;
+    flex-direction: row;
+    width: 150px;
+    height: 25px;
+    flex-wrap: wrap;
+}
+
+.li-quant{
+    display: flex;
+    flex-direction: row;
+    width: 80px;
+    height: 25px;
+    flex-wrap: wrap;
+    justify-self: right;
+    align-items: right;
+}
+
+.quant{
+    width: 80px;
     text-align: right;
+}
+
+.remove-item-button{
+    border: 0px;
+    background-color: rgb(245, 245, 245);
+    color: rgb(192, 9, 9);
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px;
 }
