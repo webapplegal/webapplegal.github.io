@@ -69,7 +69,7 @@ addButton.addEventListener("click",()=>{
     <li id="${item_id}">
         <div class="flex-container">
             <div class="delete-li"> 
-                <button class="remove-item-button" onClick="document.getElementById('${selectedItem.value}').remove();orderItems['${selectedItem.value}']-=${selectedQuantity.value};console.log(orderItems)">X</button>
+                <button class="remove-item-button" onClick="document.getElementById('${item_id}').remove();orderItems['${selectedItem.value}']-=${selectedQuantity.value};console.log(orderItems)">X</button>
             </div>
             <div class="li-text"> 
                 <span>${selectedItem.value}</span>
