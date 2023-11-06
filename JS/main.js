@@ -113,7 +113,6 @@ addButton.addEventListener("click",()=>{
             else{
                 let cuant = String(orderItems[selectedItem.value]).split("@")
                 let currentQuantity = Number(cuant[0])
-                console.log(currentQuantity)
                 orderItems[selectedItem.value] = (Number(selectedQuantity.value) + currentQuantity)//+"@"+Number(cost)
                 console.log(orderItems)
             }
