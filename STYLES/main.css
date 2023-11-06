@@ -199,15 +199,19 @@ input{
     transition: 0.2s;
 }
 .continue-button:hover{
-    text-align: center;
-    padding: auto;
-    font-size: 18px;
-    background-color: rgb(255, 255, 255);
-    border: solid black 2px;
-    color: rgb(0, 0, 0);
-    font-weight: bold;
-    width: 205px;
+    margin: 0;
+    font-size: 16px;
     height: 40px;
+    padding: 10px; 
+    background-color: rgb(226, 75, 0);
+    border: 0;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    width: 220px;
+    transition: 0.2s;
+
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
