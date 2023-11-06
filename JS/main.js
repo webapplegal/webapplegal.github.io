@@ -1,5 +1,7 @@
 import {getDatabase, set, get, update, remove, ref, child, onValue} from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js"; 
 
+var orderItems = {};
+
 window.db = getDatabase();
 window.UsersDir = ref(db,'Users/');
 window.LocIdDir = ref(db,'Loc_ID/');
@@ -55,7 +57,7 @@ let item_id = 0
 const addButton = document.getElementById("add-button")
 
 addButton.addEventListener("click",()=>{
-    console.log(item_id)
+    //console.log(item_id)
     selectedItem.value==""||selectedQuantity.value==""? alert("Revisa que Articulo o Cantidad no este vacio."):itemList.innerHTML += 
     `
     <li id="${item_id}">
@@ -73,6 +75,22 @@ addButton.addEventListener("click",()=>{
         
         
     `
+    if(selectedItem.value=="")
+    {
+
+    }
+    else{
+        if(orderItems[selectedItem.value] == null){
+            orderItems[selectedItem.value] = Number(selectedQuantity.value)
+            console.log(orderItems)
+        }
+        else{
+            let currentQuantity = Number(orderItems[selectedItem.value])
+            orderItems[selectedItem.value] = Number(selectedQuantity.value) + currentQuantity
+            console.log(orderItems)
+        }
+    }
+
     item_id += 1;
 })
 
