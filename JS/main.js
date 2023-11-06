@@ -1,11 +1,13 @@
 import {getDatabase, set, get, update, remove, ref, child, onValue} from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js"; 
 
 window.orderItems = {};
-let date = String(new Date());
+let date = String(new Date()).substring(4,24);
+console.log(date)
 
 window.db = getDatabase();
 window.UsersDir = ref(db,'Users/');
 window.LocIdDir = ref(db,'Loc_ID/');
+window.ProdDir = ref(db,'Products/');
 const dbref = ref(getDatabase());
 
 const USER = localStorage.getItem("USER")
@@ -22,6 +24,16 @@ window.LocIdDir = ref(db,'Loc_ID/');
 
 const loggedUser = document.getElementById("loggedUser")
 const selectedItem = document.getElementById("item-selector")
+
+get(ProdDir,(snapshot)=>{
+    snapshot.forEach(
+        function(ChildSnapshot){
+            console.log(ChildSnapshot.val())
+        }
+    )
+})
+
+
 const selectedQuantity = document.getElementById("quantity-field")
 const itemList = document.getElementById("item-list")
 
@@ -108,12 +120,14 @@ closeOrderButton.addEventListener("click",()=>{
     console.log("sending...")
     set(ref(db,'OPERATION/'+ date),{
         user: localStorage.getItem("USER"),
-        when: String(new Date()),
+        when: String(new Date()).substring(4,24),
         type: "sell",
         Loc_ID: localStorage.getItem("Loc_ID"),
         content: orderItems,
         client: LocName.textContent
     });
+
+    localStorage.setItem("ORDER",orderItems);
 
 })
 

@@ -9,7 +9,8 @@ const video = document.getElementById('video');
 if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
   const constraints = {
     video: true,
-    audio: false
+    audio: false,
+    facingMode: 'environment'
   };
   
   // Start video stream
