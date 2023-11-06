@@ -55,7 +55,7 @@ body{
     padding: auto;
     font-size: 20px;
     background-color: rgb(255, 255, 255);
-    border: solid black 2px;
+    border: solid black 0px;
     color: rgb(0, 0, 0);
     font-weight: bold;
     width: 105px;
