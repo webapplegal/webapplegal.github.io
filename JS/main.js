@@ -56,20 +56,20 @@ signoff_button.addEventListener("click",()=>{
     location.href = "index.html"
 })
 
-let item_id = ""
+let item_id = 0
 const addButton = document.getElementById("add-button")
 
 addButton.addEventListener("click",()=>{
     //console.log(item_id)
     //need to check if ul li text-content has element already 
-    item_id = selectedItem.value;
+  
 
     selectedItem.value==""||selectedQuantity.value==""? alert("Revisa que Articulo o Cantidad no este vacio."):itemList.innerHTML += 
     `
     <li id="${item_id}">
         <div class="flex-container">
             <div class="delete-li"> 
-                <button class="remove-item-button" onClick="document.getElementById('${item_id}').remove();orderItems['${selectedItem.value}']-=${selectedQuantity.value};console.log(orderItems)">X</button>
+                <button class="remove-item-button" onClick="document.getElementById('${selectedItem.value}').remove();orderItems['${selectedItem.value}']-=${selectedQuantity.value};console.log(orderItems)">X</button>
             </div>
             <div class="li-text"> 
                 <span>${selectedItem.value}</span>
@@ -96,6 +96,8 @@ addButton.addEventListener("click",()=>{
             console.log(orderItems)
         }
     }
+
+    item_id += 1;
 
 })
 
