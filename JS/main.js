@@ -106,7 +106,7 @@ const closeOrderButton = document.getElementById("close-order-button")
 closeOrderButton.addEventListener("click",()=>{
    
     console.log("sending...")
-    set(ref(db,'OPERATION/'+"1"),{
+    set(ref(db,'OPERATION/'+ date),{
         user: localStorage.getItem("USER"),
         when: String(new Date()),
         type: "sell",
