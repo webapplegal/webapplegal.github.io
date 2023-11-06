@@ -143,7 +143,7 @@ closeOrderButton.addEventListener("click",()=>{
     alert("Orden Enviada")
     itemList.innerHTML = ""
     localStorage.setItem("ORDER",orderItems);
-
+    location.href = "order.html"
 })
 
 
