@@ -40,8 +40,15 @@ signoff_button.addEventListener("click",()=>{
 })
 
 const continue_button = document.getElementById("close-qr-button")
+const input = document.getElementById("Loc_ID-input")
 continue_button.addEventListener("click",()=>{
-  localStorage.setItem("Loc_ID",document.getElementById('Loc_ID-input').value);
-  location.href='order.html'
+  if(input.value==""){
+    alert("Escanea o ingresa Loc ID")
+    return;
+  }
+  else{
+    localStorage.setItem("Loc_ID",input.value);
+    location.href='order.html'
+  }
 })
 
