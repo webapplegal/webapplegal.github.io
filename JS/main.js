@@ -1,6 +1,7 @@
 import {getDatabase, set, get, update, remove, ref, child, onValue} from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js"; 
 
 var orderItems = {};
+let date = String(new Date());
 
 window.db = getDatabase();
 window.UsersDir = ref(db,'Users/');
@@ -95,6 +96,7 @@ addButton.addEventListener("click",()=>{
     item_id += 1;
 })
 
+
 const closeOrderButton = document.getElementById("close-order-button")
 closeOrderButton.addEventListener("click",()=>{
    
@@ -104,7 +106,8 @@ closeOrderButton.addEventListener("click",()=>{
         when: String(new Date()),
         type: "sell",
         Loc_ID: localStorage.getItem("Loc_ID"),
-        content: orderItems
+        content: orderItems,
+        client: LocName.textContent
     });
 
 })
