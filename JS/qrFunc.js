@@ -3,34 +3,6 @@ const seen = new Set();
 // Create new barcode detector
 const barcodeDetector = new BarcodeDetector({ formats: ['qr_code'] });
 const inputField = document.getElementById("Loc_ID-input");
-
-
-// Codes proxy/state
-const codesProxy = new Proxy(codes, {
-  set (target, prop, value, receiver) {
-    // Throw err if value is a number
-    // Stops from saving undefined codes
-    if (typeof value === 'number') throw value;
-    
-    target.push(value);
-
-    // Check if code has already been scanned
-    target = target.filter((c) => {
-      if (c.rawValue !== window.barcodeVal) return c;
-      const d = seen.has(c.rawValue);
-      seen.add(c.rawValue);
-      return !d;
-    })
-    
-   
-    inputField.value = value.rawValue;
-    localStorage.setItem("Loc_ID",document.getElementById('Loc_ID-input').value);
-    location.href='order.html'
-    return true;
-  }
-});
-
-// Get video element 
 const video = document.getElementById('video');
 
 // Check for a camera
@@ -43,6 +15,23 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
   // Start video stream
   navigator.mediaDevices.getUserMedia(constraints).then(stream => video.srcObject = stream);
 }
+
+// Codes proxy/state
+const codesProxy = new Proxy(codes, {
+  set (target, prop, value, receiver) {
+    // Throw err if value is a number
+    // Stops from saving undefined codes
+    if (typeof value === 'number') throw value;
+    
+    target.push(value);
+   
+    inputField.value = value.rawValue;
+    localStorage.setItem("Loc_ID",document.getElementById('Loc_ID-input').value);
+    location.href='order.html'
+    return true;
+  }
+});
+
 
 // Detect code function 
 const detectCode = () => {
