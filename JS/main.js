@@ -40,9 +40,6 @@ onValue(ProdDir, (snapshot)=>{
     )
 });
 
-console.log(availItems)
-
-
 const selectedQuantity = document.getElementById("quantity-field")
 const itemList = document.getElementById("item-list")
 
@@ -139,7 +136,7 @@ closeOrderButton.addEventListener("click",()=>{
         content: orderItems,
         client: LocName.textContent
     });
-
+    alert("Orden Final",orderItems)
     localStorage.setItem("ORDER",orderItems);
 
 })
