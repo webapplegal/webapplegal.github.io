@@ -32,6 +32,7 @@ rutaID.textContent = localStorage.getItem("RUTA")
 
 const RFC = document.getElementById("Loc_RFC")
 const LocName = document.getElementById("Loc_Name")
+
 get(child(dbref,'Loc_ID/'+Loc_ID.textContent)).then((snapshot)=>{
     if(snapshot.exists()){
         console.log("Loc_ID found")
@@ -94,7 +95,19 @@ addButton.addEventListener("click",()=>{
     item_id += 1;
 })
 
+const closeOrderButton = document.getElementById("close-order-button")
+closeOrderButton.addEventListener("click",()=>{
+   
+    console.log("sending...")
+    set(ref(db,'OPERATION/'+"1"),{
+        user: localStorage.getItem("USER"),
+        when: String(new Date()),
+        type: "sell",
+        Loc_ID: localStorage.getItem("Loc_ID"),
+        content: orderItems
+    });
 
+})
 
 
 
