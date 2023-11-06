@@ -136,7 +136,7 @@ closeOrderButton.addEventListener("click",()=>{
         content: orderItems,
         client: LocName.textContent
     });
-    alert("Orden Final",orderItems)
+    alert("Orden Enviada")
     localStorage.setItem("ORDER",orderItems);
 
 })
