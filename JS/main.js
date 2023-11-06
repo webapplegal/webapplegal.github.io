@@ -6,7 +6,7 @@ window.ProdDir = ref(db,'Products/');
 const dbref = ref(getDatabase());
 
 window.orderItems = {};
-window.availItems = {};
+window.itemCosts = {};
 
 
 let date = String(new Date()).substring(4,24);
@@ -35,7 +35,7 @@ onValue(ProdDir, (snapshot)=>{
             selectedItem.innerHTML += `
             <option value="${ChildSnapshot.key}">${ChildSnapshot.key}</option>
             `
-            availItems[ChildSnapshot.key] = ChildSnapshot.val().cost
+            itemCosts[ChildSnapshot.key] = ChildSnapshot.val().cost
         }
     )
 });
@@ -84,7 +84,7 @@ addButton.addEventListener("click",()=>{
     //console.log(item_id)
     //need to check if ul li text-content has element already 
 
-    let cost = availItems[selectedItem.value]    
+    let cost = itemCosts[selectedItem.value]    
 
     selectedItem.value==""||selectedQuantity.value==""? alert("Revisa que Articulo o Cantidad no este vacio."):itemList.innerHTML += 
     `
