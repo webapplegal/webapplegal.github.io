@@ -7,11 +7,33 @@ const dbref = ref(getDatabase());
 
 window.orderItems = {};
 window.itemCosts = {};
-
+let months = {};
+months.Jan="01";
+months.Feb="02";
+months.Mar="03";
+months.Apr="04";
+months.May="05";
+months.Jun="06";
+months.Jul="07";
+months.Aug="08";
+months.Sep="09";
+months.Oct="10";
+months.Nov="11";
+months.Dic="12";
 
 let date = String(new Date()).substring(4,24);
-console.log(date)
+let month = months[date.substring(0,3)];
+let day = date.substring(4,6);
+let year = date.substring(9,11);
+let hour = date.substring(12,14);
+let minute = date.substring(15,17)
+let orderID = year+month+day+hour+minute
 
+console.log(date)
+console.log(orderID)
+
+const orderNo = document.getElementById("order_no")
+orderNo.innerText = orderID;
 
 const USER = localStorage.getItem("USER")
 console.log(USER)
@@ -132,7 +154,7 @@ const closeOrderButton = document.getElementById("close-order-button")
 closeOrderButton.addEventListener("click",()=>{
    
     console.log("sending...")
-    set(ref(db,'OPERATION/'+ date),{
+    set(ref(db,'Transactions/'+ orderID),{
         user: localStorage.getItem("USER"),
         when: String(new Date()).substring(4,24),
         type: "sell",
