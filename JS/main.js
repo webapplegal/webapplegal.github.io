@@ -1,14 +1,17 @@
 import {getDatabase, set, get, update, remove, ref, child, onValue} from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js"; 
-
-window.orderItems = {};
-let date = String(new Date()).substring(4,24);
-console.log(date)
-
 window.db = getDatabase();
 window.UsersDir = ref(db,'Users/');
 window.LocIdDir = ref(db,'Loc_ID/');
 window.ProdDir = ref(db,'Products/');
 const dbref = ref(getDatabase());
+
+window.orderItems = {};
+window.availItems = {};
+
+
+let date = String(new Date()).substring(4,24);
+console.log(date)
+
 
 const USER = localStorage.getItem("USER")
 console.log(USER)
@@ -25,13 +28,19 @@ window.LocIdDir = ref(db,'Loc_ID/');
 const loggedUser = document.getElementById("loggedUser")
 const selectedItem = document.getElementById("item-selector")
 
-get(ProdDir,(snapshot)=>{
+onValue(ProdDir, (snapshot)=>{
+    selectedItem.innerHTML = `<option value="">Articulos:</option>`
     snapshot.forEach(
         function(ChildSnapshot){
-            console.log(ChildSnapshot.val())
+            selectedItem.innerHTML += `
+            <option value="${ChildSnapshot.key}">${ChildSnapshot.key}</option>
+            `
+            availItems[ChildSnapshot.key] = ChildSnapshot.val().cost
         }
     )
-})
+});
+
+console.log(availItems)
 
 
 const selectedQuantity = document.getElementById("quantity-field")
@@ -74,7 +83,8 @@ const addButton = document.getElementById("add-button")
 addButton.addEventListener("click",()=>{
     //console.log(item_id)
     //need to check if ul li text-content has element already 
-  
+
+    let cost = availItems[selectedItem.value]    
 
     selectedItem.value==""||selectedQuantity.value==""? alert("Revisa que Articulo o Cantidad no este vacio."):itemList.innerHTML += 
     `
@@ -93,18 +103,21 @@ addButton.addEventListener("click",()=>{
         
         
     `
+
     if(selectedItem.value=="")
     {
 
     }
     else{
         if(orderItems[selectedItem.value] == null){
-            orderItems[selectedItem.value] = Number(selectedQuantity.value)
+            orderItems[selectedItem.value] = Number(selectedQuantity.value)//+"@"+Number(cost)
             console.log(orderItems)
         }
         else{
-            let currentQuantity = Number(orderItems[selectedItem.value])
-            orderItems[selectedItem.value] = Number(selectedQuantity.value) + currentQuantity
+            let cuant = String(orderItems[selectedItem.value]).split("@")
+            let currentQuantity = Number(cuant[0])
+            console.log(currentQuantity)
+            orderItems[selectedItem.value] = (Number(selectedQuantity.value) + currentQuantity)//+"@"+Number(cost)
             console.log(orderItems)
         }
     }
