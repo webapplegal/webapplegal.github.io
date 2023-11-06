@@ -36,6 +36,14 @@ body{
     background-color: rgba(255, 85, 0, 0);
     font-weight: bold;
     font-size: 10pt;
+    transition: 0.2s;
+}
+#sign-off-button:hover{
+    background-color: rgb(225, 54, 54);
+    color: white;
+    font-weight: bold;
+    border: 0px;
+    width: 130px;
 }
 
 #add-button{
@@ -49,6 +57,7 @@ body{
     background-color: rgb(255, 85, 0);
     font-size: 18px;
     font-weight: bold;
+    transition: 0.2s;
 }
 #add-button:hover{
     text-align: center;
@@ -56,9 +65,10 @@ body{
     font-size: 20px;
     background-color: rgb(255, 255, 255);
     border: solid black 0px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 85, 0);
+    border: solid 1px rgb(255, 85, 0);;
     font-weight: bold;
-    width: 105px;
+    width: 120px;
     height: 40px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
@@ -203,7 +213,7 @@ input{
     font-size: 16px;
     height: 40px;
     padding: 10px; 
-    background-color: rgb(226, 75, 0);
+    background-color:  rgb(255, 85, 0);
     border: 0;
     border-radius: 10px;
     text-align: center;
@@ -235,34 +245,37 @@ li:hover{
 .flex-container{
     display: flex;
     flex-direction: row;
-    align-items: baseline;
+    align-items: center;
     flex-wrap: wrap;
+    height: 40px;
 }
 
 .delete-li{ 
     display: flex;
     flex-direction: row;
     width: 50px;
-    height: 25px;
+    height: 40px;
     flex-wrap: wrap;  
+    align-items: center;
 }
 
 .li-text{
     display: flex;
     flex-direction: row;
     width: 120px;
-    height: 25px;
+    height: 40px;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .li-quant{
     display: flex;
     flex-direction: row;
     width: 80px;
-    height: 25px;
+    height: 40px;
     flex-wrap: wrap;
     justify-self: right;
-    align-items: right;
+    align-items: center;
 }
 
 .quant{
