@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="STYLES/qr.css">
     <script type="module" src="JS/dbconfig.js"></script>
     <script type="module" src="JS/qr.js"></script>
+
+    <script type="module" src="JS/qrFunc.js"></script>
     <title>ESLABON - QR</title>
     
 </head>
@@ -20,16 +22,18 @@
 
     <div id="contenedor" class="contenedor" style="text-align: center;">
         <br>
-        <div id="container">
-            <video autoplay="true" id="videoElement">
-            
-            </video>
+
+        <div style="display: flex; gap: 1rem">
+            <div id="video-wrapper">
+              <canvas id="canvas" width="300" height="300"></canvas>
+              <video id="video" width="300" height="300" autoplay></video>
+            </div>
         </div>
 
         <input type="text" name="" id="Loc_ID-input">
         <br><br>
         <button id="close-qr-button" class="continue-button">Continuar →</button>
-
+        <div id="scanned"></div>
 
     </div>
 
@@ -43,6 +47,7 @@
         </div>
     </div>
     
+
 
 </body>
 </html>
