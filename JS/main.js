@@ -1,6 +1,6 @@
 import {getDatabase, set, get, update, remove, ref, child, onValue} from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js"; 
 
-var orderItems = {};
+window.orderItems = {};
 let date = String(new Date());
 
 window.db = getDatabase();
@@ -65,7 +65,7 @@ addButton.addEventListener("click",()=>{
     <li id="${item_id}">
         <div class="flex-container">
             <div class="delete-li"> 
-                <button class="remove-item-button" onClick="document.getElementById(${item_id}).remove();">X</button>
+                <button class="remove-item-button" onClick="document.getElementById(${item_id}).remove();orderItems['${selectedItem.value}']=0;console.log(orderItems)">X</button>
             </div>
             <div class="li-text"> 
                 <span>${selectedItem.value}</span>
