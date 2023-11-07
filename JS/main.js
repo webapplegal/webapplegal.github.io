@@ -168,7 +168,7 @@ closeOrderButton.addEventListener("click",()=>{
         when: String(new Date()).substring(4,24),
         type: "sell",
         Loc_ID: localStorage.getItem("Loc_ID"),
-        content: orderItems,
+        cantidades: orderItems,
         client: LocName.textContent,
         subtotales: subtotales,
         total: getTotal(subtotales)
