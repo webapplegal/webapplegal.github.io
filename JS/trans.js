@@ -44,9 +44,6 @@ if(USER==null){
 }
 const loggedUser = document.getElementById("loggedUser")
 
-const rutaID = document.getElementById("route_id")
-rutaID.textContent = localStorage.getItem("RUTA")
-
 const transactionList = document.getElementById("transaction-list")
 onValue(TransDir, (snapshot)=>{
     transactionList.innerHTML = ''
