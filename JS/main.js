@@ -146,6 +146,7 @@ addButton.addEventListener("click",()=>{
             }
         }
         item_id += 1;
+        selectedQuantity.value = ""
     }
     else{
         alert("Articulo ya existe en orden, si desea cambiar la cantidad, borrelo e intente de nuevo.")
