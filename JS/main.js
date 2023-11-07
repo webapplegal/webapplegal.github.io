@@ -34,9 +34,6 @@ let orderID = year+month+day+hour+minute
 console.log(date)
 console.log(orderID)
 
-const orderNo = document.getElementById("order_no")
-orderNo.innerText = orderID;
-
 const USER = localStorage.getItem("USER")
 console.log(USER)
 
