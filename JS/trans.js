@@ -49,9 +49,12 @@ rutaID.textContent = localStorage.getItem("RUTA")
 
 const transactionList = document.getElementById("transaction-list")
 onValue(TransDir, (snapshot)=>{
+    transactionList.innerHTML = ''
     snapshot.forEach(
         function(ChildSnapshot){
+            if(ChildSnapshot.val().user == USER){
             transactionList.innerHTML += `<li><span>ID: ${ChildSnapshot.key}</span> <span> Total: $ ${ChildSnapshot.val().total}</span></li>`   
+            }
         }
     )
 });
