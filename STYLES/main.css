@@ -70,6 +70,7 @@ body{
     background-color: white;
     text-align: center;
     height: 78%;
+    overflow: scroll;
     border: black;
     border-width: 2px;
     margin: 0px;
