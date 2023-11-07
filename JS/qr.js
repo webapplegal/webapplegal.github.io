@@ -41,14 +41,25 @@ signoff_button.addEventListener("click",()=>{
 
 const continue_button = document.getElementById("close-qr-button")
 const input = document.getElementById("Loc_ID-input")
+
 continue_button.addEventListener("click",()=>{
-  if(input.value==""){
-    alert("Escanea o ingresa Loc ID")
-    return;
-  }
-  else{
-    localStorage.setItem("Loc_ID",input.value);
-    location.href='order.html'
-  }
+  get(child(dbref,'Loc_ID/'+input.value)).then((snapshot)=>{
+    if(snapshot.exists()){
+        console.log("Loc_ID found")
+        if(input.value==""){
+          alert("Escanea o ingresa Loc ID")
+          return;
+        }
+        else{
+          localStorage.setItem("Loc_ID",input.value);
+          location.href='order.html'
+        }
+    }
+    else{  
+        alert("Loc_ID not found");
+    }
+})
+
+  
 })
 
