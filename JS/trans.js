@@ -30,7 +30,8 @@ let day = date.substring(4,6);
 let year = date.substring(9,11);
 let hour = date.substring(12,14);
 let minute = date.substring(15,17)
-let orderID = year+month+day+hour+minute
+let second = date.substring(19,20)
+let orderID = year+month+day+hour+minute+second
 
 console.log(date)
 console.log(orderID)
