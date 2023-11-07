@@ -38,3 +38,16 @@
     border: 0px;
     width: 130px;
 }
+
+#trans-button{
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+    border: solid white 2px;
+    text-align: center;
+    padding: 0;
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+    font-weight: bold;
+    font-size: 10pt;
+}
