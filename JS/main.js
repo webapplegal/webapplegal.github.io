@@ -169,7 +169,9 @@ closeOrderButton.addEventListener("click",()=>{
         type: "sell",
         Loc_ID: localStorage.getItem("Loc_ID"),
         content: orderItems,
-        client: LocName.textContent
+        client: LocName.textContent,
+        subtotales: subtotales,
+        total: getTotal(subtotales)
     });
     alert("Orden Enviada")
     itemList.innerHTML = ""
