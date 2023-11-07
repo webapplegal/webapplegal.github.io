@@ -7,6 +7,8 @@ const dbref = ref(getDatabase());
 
 window.orderItems = {};
 window.itemCosts = {};
+window.subtotales = {};
+
 let months = {};
 months.Jan="01";
 months.Feb="02";
@@ -110,7 +112,7 @@ addButton.addEventListener("click",()=>{
         <li id="${item_id}">
             <div class="flex-container">
                 <div class="delete-li"> 
-                    <button class="remove-item-button" onClick="document.getElementById('${item_id}').remove();orderItems['${selectedItem.value}']-=${selectedQuantity.value};console.log(orderItems)">X</button>
+                    <button class="remove-item-button" onClick="document.getElementById('${item_id}').remove();orderItems['${selectedItem.value}']=0;subtotales['${selectedItem.value}']=0;console.log('Cantidades:',orderItems);console.log('Subtotales:',subtotales);getTotal(subtotales);">X</button>
                 </div>
                 <div class="li-text"> 
                     <span>${selectedItem.value}</span>
@@ -129,14 +131,21 @@ addButton.addEventListener("click",()=>{
         }
         else{
             if(orderItems[selectedItem.value] == null){
-                orderItems[selectedItem.value] = Number(selectedQuantity.value)//+"@"+Number(cost)
-                console.log(orderItems)
+                orderItems[selectedItem.value] = Number(selectedQuantity.value)
+                subtotales[selectedItem.value] = Number(selectedQuantity.value)*Number(cost)
+                console.log('Cantidades:',orderItems);
+                console.log('Subtotales:',subtotales);
+                getTotal(subtotales) 
             }
             else{
                 let cuant = String(orderItems[selectedItem.value]).split("@")
                 let currentQuantity = Number(cuant[0])
-                orderItems[selectedItem.value] = (Number(selectedQuantity.value) + currentQuantity)//+"@"+Number(cost)
-                console.log(orderItems)
+                orderItems[selectedItem.value] = (Number(selectedQuantity.value) + currentQuantity)
+                subtotales[selectedItem.value] = (Number(selectedQuantity.value) + currentQuantity)*Number(cost)
+                console.log('Cantidades:',orderItems);
+                console.log('Subtotales:',subtotales);
+                getTotal(subtotales)
+                 
             }
         }
         item_id += 1;
@@ -168,7 +177,15 @@ closeOrderButton.addEventListener("click",()=>{
     location.href = "qrScan.html"
 })
 
+function getTotal(obj){
+    const values = Object.values(obj);
 
-
-
+                const sum = values.reduce((accumulator, value) => {
+                  return accumulator + value;
+                }, 0);
+                
+                console.log('Total:',sum);
+                return sum;
+}
+export default getTotal
 

@@ -71,6 +71,18 @@
         </div>
     </div>
     
+    <script>
+        function getTotal(obj){
+        const values = Object.values(obj);
+
+                const sum = values.reduce((accumulator, value) => {
+                  return accumulator + value;
+                }, 0);
+                
+                console.log('Total:',sum);
+                return sum;
+            }
+    </script>
 
 </body>
 </html>
