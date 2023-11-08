@@ -5,8 +5,10 @@ window.LocIdDir = ref(db,'Loc_ID/');
 window.ProdDir = ref(db,'Products/');
 const dbref = ref(getDatabase());
 
-window.orderItems = {};
+window.tempItems = {};
+window.orderItems = {}
 window.itemCosts = {};
+window.tempSubtotales = {};
 window.subtotales = {};
 
 let months = {};
@@ -102,7 +104,7 @@ const addButton = document.getElementById("add-button")
 addButton.addEventListener("click",()=>{
     //console.log(item_id)
     //need to check if ul li text-content has element already 
-    if(orderItems.hasOwnProperty(selectedItem.value)==false || orderItems[selectedItem.value]==0){
+    if(tempItems.hasOwnProperty(selectedItem.value)==false || tempItems[selectedItem.value]==0){
         let cost = itemCosts[selectedItem.value]    
 
         selectedItem.value==""||selectedQuantity.value==""? alert("Revisa que Articulo o Cantidad no este vacio."):itemList.innerHTML += 
@@ -110,7 +112,7 @@ addButton.addEventListener("click",()=>{
         <li id="${item_id}">
             <div class="flex-container">
                 <div class="delete-li"> 
-                    <button class="remove-item-button" onClick="document.getElementById('${item_id}').remove();orderItems['${selectedItem.value}']=0;subtotales['${selectedItem.value}']=0;console.log('Cantidades:',orderItems);console.log('Subtotales:',subtotales);getTotal(subtotales);">X</button>
+                    <button class="remove-item-button" onClick="document.getElementById('${item_id}').remove();tempItems['${selectedItem.value}']=0;tempSubtotales['${selectedItem.value}']=0;console.log('Cantidades:',tempItems);console.log('tempSubtotales:',tempSubtotales);getTotal(tempSubtotales);">X</button>
                 </div>
                 <div class="li-text"> 
                     <span>${selectedItem.value}</span>
@@ -128,21 +130,21 @@ addButton.addEventListener("click",()=>{
 
         }
         else{
-            if(orderItems[selectedItem.value] == null){
-                orderItems[selectedItem.value] = Number(selectedQuantity.value)
-                subtotales[selectedItem.value] = Number(selectedQuantity.value)*Number(cost)
-                console.log('Cantidades:',orderItems);
-                console.log('Subtotales:',subtotales);
-                getTotal(subtotales) 
+            if(tempItems[selectedItem.value] == null){
+                tempItems[selectedItem.value] = Number(selectedQuantity.value)
+                tempSubtotales[selectedItem.value] = Number(selectedQuantity.value)*Number(cost)
+                console.log('Cantidades:',tempItems);
+                console.log('tempSubtotales:',tempSubtotales);
+                getTotal(tempSubtotales) 
             }
             else{
-                let cuant = String(orderItems[selectedItem.value]).split("@")
+                let cuant = String(tempItems[selectedItem.value]).split("@")
                 let currentQuantity = Number(cuant[0])
-                orderItems[selectedItem.value] = (Number(selectedQuantity.value) + currentQuantity)
-                subtotales[selectedItem.value] = (Number(selectedQuantity.value) + currentQuantity)*Number(cost)
-                console.log('Cantidades:',orderItems);
-                console.log('Subtotales:',subtotales);
-                getTotal(subtotales)
+                tempItems[selectedItem.value] = (Number(selectedQuantity.value) + currentQuantity)
+                tempSubtotales[selectedItem.value] = (Number(selectedQuantity.value) + currentQuantity)*Number(cost)
+                console.log('Cantidades:',tempItems);
+                console.log('tempSubtotales:',tempSubtotales);
+                getTotal(tempSubtotales)
                  
             }
         }
@@ -160,22 +162,42 @@ addButton.addEventListener("click",()=>{
 
 const closeOrderButton = document.getElementById("close-order-button")
 closeOrderButton.addEventListener("click",()=>{
-   
-    console.log("sending...")
-    set(ref(db,'Transactions/'+ orderID),{
-        user: localStorage.getItem("USER"),
-        when: String(new Date()).substring(4,24),
-        type: "sell",
-        Loc_ID: localStorage.getItem("Loc_ID"),
-        cantidades: orderItems,
-        client: LocName.textContent,
-        subtotales: subtotales,
-        total: getTotal(subtotales)
-    });
-    alert("Orden Enviada")
-    itemList.innerHTML = ""
-    localStorage.setItem("ORDER",orderItems);
-    location.href = "qrScan.html"
+
+    let temp1 = Object.entries(tempItems);
+    temp1.forEach((set)=>{
+        if(set[1]!=0){
+            orderItems[set[0]] = set[1]
+        }
+    })
+    let temp2 = Object.entries(tempSubtotales);
+    temp2.forEach((set)=>{
+        if(set[1]!=0){
+            subtotales[set[0]] = set[1]
+        }
+    })
+    console.log(orderItems)
+    console.log(subtotales)
+
+    if(getTotal(orderItems)==0){
+        alert("Orden vacia")
+    }
+    else{
+        set(ref(db,'Transactions/'+ orderID),{
+            user: localStorage.getItem("USER"),
+            when: String(new Date()).substring(4,24),
+            type: "sell",
+            Loc_ID: localStorage.getItem("Loc_ID"),
+            cantidades: tempItems,
+            client: LocName.textContent,
+            subtotales: subtotales,
+            total: getTotal(subtotales)
+        });
+    
+        alert("Orden Enviada")
+        itemList.innerHTML = ""
+        localStorage.setItem("ORDER",orderItems);
+        location.href = "qrScan.html"
+    }
 })
 
 function getTotal(obj){
