@@ -15,15 +15,17 @@ window.itemCosts = {};
 window.tempSubtotales = {};
 window.subtotales = {};
 
+const loggedUser = document.getElementById("loggedUser")
+const selectedItem = document.getElementById("item-selector")
 const USER = localStorage.getItem("USER")
 loggedUser.textContent = USER;
+
 if(USER==null){
     alert("Sesión expirada")
     location.href = "index.html"
 }
 
-const loggedUser = document.getElementById("loggedUser")
-const selectedItem = document.getElementById("item-selector")
+
 
 onValue(ProdDir, (snapshot)=>{
     selectedItem.innerHTML = `<option value="">Articulos:</option>`
