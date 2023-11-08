@@ -1,4 +1,8 @@
 import {getDatabase, set, get, update, remove, ref, child, onValue} from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js"; 
+import {getSeparatedDate} from "./getDateFormat.js"
+
+let orderID = getSeparatedDate().serial
+
 window.db = getDatabase();
 window.UsersDir = ref(db,'Users/');
 window.LocIdDir = ref(db,'Loc_ID/');
@@ -11,43 +15,12 @@ window.itemCosts = {};
 window.tempSubtotales = {};
 window.subtotales = {};
 
-let months = {};
-months.Jan="01";
-months.Feb="02";
-months.Mar="03";
-months.Apr="04";
-months.May="05";
-months.Jun="06";
-months.Jul="07";
-months.Aug="08";
-months.Sep="09";
-months.Oct="10";
-months.Nov="11";
-months.Dic="12";
-
-let date = String(new Date()).substring(4,24);
-let month = months[date.substring(0,3)];
-let day = date.substring(4,6);
-let year = date.substring(9,11);
-let hour = date.substring(12,14);
-let minute = date.substring(15,17);
-let second = date.substring(19,21);
-let orderID = year+month+day+hour+minute+second
-
-console.log(date)
-console.log(orderID)
-
 const USER = localStorage.getItem("USER")
-console.log(USER)
-
+loggedUser.textContent = USER;
 if(USER==null){
     alert("Sesión expirada")
     location.href = "index.html"
 }
-
-window.db = getDatabase();
-window.UsersDir = ref(db,'Users/');
-window.LocIdDir = ref(db,'Loc_ID/');
 
 const loggedUser = document.getElementById("loggedUser")
 const selectedItem = document.getElementById("item-selector")
@@ -78,18 +51,12 @@ const LocName = document.getElementById("Loc_Name")
 
 get(child(dbref,'Loc_ID/'+Loc_ID.textContent)).then((snapshot)=>{
     if(snapshot.exists()){
-        console.log("Loc_ID found")
         RFC.textContent = snapshot.val().RFC
         LocName.textContent = snapshot.val().NAME
-    }
-    else{   
-        console.log("Loc_ID not found")
     }
 })
 
 
-
-loggedUser.textContent = USER;
 
 const signoff_button = document.getElementById("sign-off-button");
 signoff_button.addEventListener("click",()=>{
@@ -100,7 +67,6 @@ signoff_button.addEventListener("click",()=>{
 
 let item_id = 0
 const addButton = document.getElementById("add-button")
-
 addButton.addEventListener("click",()=>{
     //console.log(item_id)
     //need to check if ul li text-content has element already 
