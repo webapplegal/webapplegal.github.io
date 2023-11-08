@@ -8,6 +8,15 @@ window.TransDir = ref(db,'Transactions/');
 
 const dbref = ref(getDatabase());
 
+var selectedDate
+try{
+    selectedDate = localStorage.getItem("date")
+}
+catch{
+    selectedDate = year+month+day;
+}
+console.log(selectedDate)
+
 
 
 let months = {};
@@ -44,21 +53,16 @@ if(USER==null){
     location.href = "index.html"
 }
 
-var selectedDate = year+month+day;
+
 console.log(selectedDate)
 const loggedUser = document.getElementById("loggedUser")
 const dateSel = document.getElementById("date")
 dateSel.addEventListener("change",()=>{
     selectedDate = String(dateSel.value).replace("-","")
     selectedDate = selectedDate.replace("-","").substring(2)
+    localStorage.setItem("date",selectedDate)
     console.log(selectedDate)
-    let currentState = get(child(dbref,'Flag/')).then((snapshot)=>{return snapshot.val().CHANGE})
-    console.log(currentState)
-    let nextState = !currentState;
-    set(ref(db,'Flag/'),{
-        CHANGE: nextState
-    });
-
+    location.href="transactions.html"
 })
 const transactionList = document.getElementById("transaction-list")
 
