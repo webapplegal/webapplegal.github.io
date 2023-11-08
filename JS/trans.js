@@ -43,16 +43,46 @@ if(USER==null){
     alert("Sesión expirada")
     location.href = "index.html"
 }
-const loggedUser = document.getElementById("loggedUser")
 
+var selectedDate = year+month+day;
+console.log(selectedDate)
+const loggedUser = document.getElementById("loggedUser")
+const dateSel = document.getElementById("date")
+dateSel.addEventListener("change",()=>{
+    selectedDate = String(dateSel.value).replace("-","")
+    selectedDate = selectedDate.replace("-","").substring(2)
+    console.log(selectedDate)
+    let currentState = get(child(dbref,'Flag/')).then((snapshot)=>{return snapshot.val().CHANGE})
+    console.log(currentState)
+    let nextState = !currentState;
+    set(ref(db,'Flag/'),{
+        CHANGE: nextState
+    });
+
+})
 const transactionList = document.getElementById("transaction-list")
+
+
 onValue(TransDir, (snapshot)=>{
+    let count = 0;
     transactionList.innerHTML = ''
     snapshot.forEach(
         function(ChildSnapshot){
             if(ChildSnapshot.val().user == USER){
-            transactionList.innerHTML += `<li><span>ID: ${ChildSnapshot.key}</span> <span> Total: $ ${ChildSnapshot.val().total}</span></li>`   
-            }
+                console.log(String(ChildSnapshot.key).substring(0,6))
+                if(String(ChildSnapshot.key).substring(0,6)==selectedDate){
+                    transactionList.innerHTML += `<li id="${count}"><span>ID: ${ChildSnapshot.key}</span><span id="total"></span></li>`   
+                
+                    const _total = document.getElementById("total")
+                    const listItem = document.getElementById(count)
+    
+                    listItem.addEventListener("click",()=>{
+                        _total.textContent += `Total: $ ${ChildSnapshot.val().total}`
+                        console.log("Triggered")
+                    })
+                    count+=1;
+                }
+            } 
         }
     )
 });
