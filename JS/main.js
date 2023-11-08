@@ -19,11 +19,17 @@ const loggedUser = document.getElementById("loggedUser")
 const selectedItem = document.getElementById("item-selector")
 const USER = localStorage.getItem("USER")
 loggedUser.textContent = USER;
-
 if(USER==null){
     alert("Sesión expirada")
     location.href = "index.html"
 }
+const Loc_ID = document.getElementById("Loc_ID-text")
+Loc_ID.textContent = localStorage.getItem("Loc_ID")
+const rutaID = document.getElementById("route_id")
+rutaID.textContent = localStorage.getItem("RUTA")
+const RFC = document.getElementById("Loc_RFC")
+const LocName = document.getElementById("Loc_Name")
+
 
 
 
@@ -42,14 +48,7 @@ onValue(ProdDir, (snapshot)=>{
 const selectedQuantity = document.getElementById("quantity-field")
 const itemList = document.getElementById("item-list")
 
-const Loc_ID = document.getElementById("Loc_ID-text")
-Loc_ID.textContent = localStorage.getItem("Loc_ID")
 
-const rutaID = document.getElementById("route_id")
-rutaID.textContent = localStorage.getItem("RUTA")
-
-const RFC = document.getElementById("Loc_RFC")
-const LocName = document.getElementById("Loc_Name")
 
 get(child(dbref,'Loc_ID/'+Loc_ID.textContent)).then((snapshot)=>{
     if(snapshot.exists()){
