@@ -7,19 +7,22 @@ body{
 #date-select-container{
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items:flex-end;
     justify-content: center;
     height: 52px;
     margin-bottom: 20px;
+    gap: 5px;
 }
 
 #date{
-    height: 30px;
-    padding: 5px;
+    width: 210px;
+    height: 40px;
+    padding: 0px;
     margin: 0px !important;
     border-radius: 10px;
     justify-content: center;
     align-items: center;
+    background-color: rgb(245, 245, 245);
     border: 0;
 }
 
