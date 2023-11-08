@@ -6,7 +6,7 @@ body{
 }
 
 
-#add-button{
+#add-button,#search-button{
     width: 100px;
     height: 40px;
     border-radius: 10px;

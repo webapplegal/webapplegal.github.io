@@ -57,7 +57,9 @@ if(USER==null){
 console.log(selectedDate)
 const loggedUser = document.getElementById("loggedUser")
 const dateSel = document.getElementById("date")
-dateSel.addEventListener("change",()=>{
+const searchButton=document.getElementById("search-button")
+
+searchButton.addEventListener("click",()=>{
     selectedDate = String(dateSel.value).replace("-","")
     selectedDate = selectedDate.replace("-","").substring(2)
     localStorage.setItem("date",selectedDate)
