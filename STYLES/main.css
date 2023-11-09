@@ -4,6 +4,7 @@ body{
     background-color: rgb(0, 0, 0);
     font-family: Arial, Helvetica, sans-serif;
 }
+
 #date-select-container{
     display: flex;
     flex-direction: row;
@@ -23,7 +24,7 @@ body{
     justify-content: center;
     align-items: center;
     background-color: rgb(245, 245, 245);
-    border: 1px solid rgba(1, 1, 1, 0.6)
+    border: 1px solid rgba(1, 1, 1, 0.6);
 }
 
 #search-button{
@@ -235,12 +236,18 @@ li{
     margin: 5px;
     margin-left: 20px;
     margin-right: 20px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(252,252, 252);
     border-radius: 5px;
     transition: 0.2s ease-out;
+    font-size: 18px;
 }
 li:hover{
-    background-color: orange;
+    background-color: white;
+    border: 1px solid (255, 85, 0);
+    box-shadow: 0px 0px 20px 5px rgb(192, 192, 192);
+    padding: 10px;
+    padding-left: 12px;
+    font-weight: bold;
 }
 
 
