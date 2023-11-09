@@ -51,7 +51,12 @@ onValue(TransDir, (snapshot)=>{
         function(ChildSnapshot){
             if(ChildSnapshot.val().user == USER){
                 if(String(ChildSnapshot.key).substring(0,6)==selectedDate){
-                    transactionList.innerHTML += `<li onclick="console.log('clicked');if(document.getElementById('total-'+${count}).textContent==''){document.getElementById('total-'+${count}).textContent=' Total: $ ${ChildSnapshot.val().total}'}else{document.getElementById('total-'+${count}).textContent=''}"><span>ID: ${ChildSnapshot.key}</span><br><span id="total-${count}" class="order-sub"></span></li>`   
+                    transactionList.innerHTML += 
+                    `<li onclick="console.log('clicked');if(document.getElementById('total-'+${count}).textContent==''){document.getElementById('total-'+${count}).textContent=' Total: ${ChildSnapshot.val().total.toLocaleString('en-US', {style: 'currency', currency: 'USD',})}'}else{document.getElementById('total-'+${count}).textContent=''}">
+                        <span>ID: ${ChildSnapshot.key}</span>
+                        <br>
+                        <span id="total-${count}" class="order-sub"></span>
+                    </li>`   
                     count+=1;
                 }
             } 
