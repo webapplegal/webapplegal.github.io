@@ -23,12 +23,12 @@ body{
     justify-content: center;
     align-items: center;
     background-color: rgb(245, 245, 245);
-    border: 1px solid rgba(1, 1, 1, 0.3)
+    border: 1px solid rgba(1, 1, 1, 0.6)
 }
 
 #search-button{
     width: 100px;
-    height: 40px;
+    height: 42px;
     padding: 5px;
     margin: 0px !important;
     border-radius: 10px;
@@ -47,7 +47,7 @@ body{
     width: 100px;
     height: 40px;
     border-radius: 10px;
-    border: solid rgb(0, 0, 0) 0px;
+    border: solid rgb(255, 85, 0) 1px;
     text-align: center;
     padding: 0;
     color: white;

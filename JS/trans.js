@@ -45,21 +45,13 @@ const transactionList = document.getElementById("transaction-list")
 
 
 onValue(TransDir, (snapshot)=>{
-    let count = 0;
+    window.count = 0;
     transactionList.innerHTML = ''
     snapshot.forEach(
         function(ChildSnapshot){
             if(ChildSnapshot.val().user == USER){
                 if(String(ChildSnapshot.key).substring(0,6)==selectedDate){
-                    transactionList.innerHTML += `<li id="${count}"><span>ID: ${ChildSnapshot.key}</span><span id="total"></span></li>`   
-                
-                    const _total = document.getElementById("total")
-                    const listItem = document.getElementById(count)
-    
-                    listItem.addEventListener("click",()=>{
-                        _total.textContent += `Total: $ ${ChildSnapshot.val().total}`
-                        
-                    })
+                    transactionList.innerHTML += `<li onclick="console.log('clicked');document.getElementById('total-'+${count}).textContent=' Total: ${ChildSnapshot.val().total}'"><span>ID: ${ChildSnapshot.key}</span><br><span id="total-${count}"></span></li>`   
                     count+=1;
                 }
             } 
