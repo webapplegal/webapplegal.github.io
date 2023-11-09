@@ -70,6 +70,10 @@ body{
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
+.order-sub{
+    color: rgb(152, 152, 152);
+}
+
 #welcome{
     margin-left: 30px;
     color: white;
