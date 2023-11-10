@@ -24,5 +24,8 @@ export function getSeparatedDate(){
     formatedDate.minute = date.substring(15,17);
     formatedDate.second = date.substring(19,20);
     formatedDate.serial = formatedDate.year+formatedDate.month+formatedDate.day+formatedDate.hour+formatedDate.minute+formatedDate.second;
+    console.log("Year:",formatedDate.year)
+    console.log("Month:",formatedDate.month)
+    console.log("Day:",formatedDate.day)
     return formatedDate
 }

@@ -7,18 +7,38 @@ window.LocIdDir = ref(db,'Loc_ID/');
 window.ProdDir = ref(db,'Products/');
 window.TransDir = ref(db,'Transactions/');
 
-console.log(getSeparatedDate().serial)
+console.log(getSeparatedDate().serial);
 
+let year = getSeparatedDate.year;
+let month = getSeparatedDate.month;
+let day = getSeparatedDate.day;
+
+const loggedUser = document.getElementById("loggedUser")
+const yearSel = document.getElementById("year")
+const monthSel = document.getElementById("month")
+const daySel = document.getElementById("day")
+
+const searchButton=document.getElementById("search-button")
 
 var selectedDate
 try{
     selectedDate = localStorage.getItem("date")
+    console.log("got from local")
+    yearSel.value = "20"+String(selectedDate).substring(0,2)
+    monthSel.value = String(selectedDate).substring(2,4)
+    daySel.value = String(selectedDate).substring(4,6)
 }
 catch{
     selectedDate = year+month+day;
+    console.log("set man")
+    console.log(selectedDate)
+    yearSel.value = "20"+String(selectedDate).substring(0,2)
+    monthSel.value = String(selectedDate).substring(2,4)
+    daySel.value = String(selectedDate).substring(4,6)
 }
+    
 
-
+   
 
 
 const USER = localStorage.getItem("USER")
@@ -31,13 +51,16 @@ if(USER==null){
 
 
 
-const loggedUser = document.getElementById("loggedUser")
-const dateSel = document.getElementById("date")
-const searchButton=document.getElementById("search-button")
+
 
 searchButton.addEventListener("click",()=>{
-    selectedDate = String(dateSel.value).replace("-","")
-    selectedDate = selectedDate.replace("-","").substring(2)
+    let day_ = daySel.value;
+    let month_=monthSel.value;
+    daySel.value<10? day_=String("0").concat(String(daySel.value)):day_=String(daySel.value);
+    monthSel.value<10? month_=String("0").concat(String(monthSel.value)):month_=String(monthSel.value);
+
+    selectedDate = String(String(yearSel.value).substring(2,4)+month_+day_)
+
     localStorage.setItem("date",selectedDate)
     location.href="transactions.html"
 })
