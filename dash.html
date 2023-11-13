@@ -14,11 +14,13 @@
         #side-bar{
             width: 20px;
             position: relative;
+            text-align: center;
+            justify-content: center;
         }
 
 
         #ham{
-            margin-right: 10px;
+            margin-right: 0px;
             width: 30px; 
             height: 30px; 
             border-radius: 15px; 
@@ -27,7 +29,7 @@
             color: rgb(233, 233, 233); 
             box-shadow: 3px 3px 10px 2px rgba(125, 90, 90, 0.4); 
             text-align: center;
-            transition: 0.1s;
+            transition: 0.2s;
         }
         #ham:focus{
             background: white;
@@ -37,14 +39,14 @@
             width: 220px;
             height: 150px;
             border-radius: 10px;
-            -webkit-transform: translate(-190px, 60px);
-            transform: translate(-190px, 60px);
+            -webkit-transform: translateX(-180px) translateY(60px);
+            transform: translate(-180px, 60px);
         }
         .side-but{
             width: 100px;
             text-align: left;
-            background-color: rgb(241, 241, 241);
-            border: 0px;
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgb(210, 210, 210);
             border-radius: 10px;
             font-size: 18px;
             font-family: Arial, Helvetica, sans-serif;
@@ -53,25 +55,28 @@
             padding-left: 10px;
             transition: 0.5s; 
         }
+        .side-but:hover{
+            box-shadow: 0px 0px 20px 2px rgba(128, 128, 128, 0.25);
+            width: 102px;
+        }
 
         .sub-but{
             width: 180px;
             text-align: left;
-            background-color: rgb(241, 241, 241);
-            border: 0px;
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgb(210, 210, 210);
             border-radius: 10px;
             font-size: 18px;
             font-family: Arial, Helvetica, sans-serif;
             margin-bottom: 5px;
             padding: 5px;
             padding-left: 10px;
-            transition: 0.5s;
+            transition: 0.5s; 
         }
         .sub-but:hover{
-            background-color: rgb(255, 85, 0);
-            color: white;
-            box-shadow: 0px 0px 10px 5px rgba(128, 128, 128, 0.454);
-            font-weight: bold;
+            background-color: rgb(240, 240, 240);
+            color: black;
+            box-shadow: 0px 0px 10px 2px rgba(128, 128, 128, 0.3);
         }
     </style>
 </head>
@@ -98,7 +103,8 @@
                 </div>
 
                 <div style="display: flex;"> 
-                    <div style="margin-left: 20px; margin-right: 10px; padding: 15px; width: auto; min-width: 100px; height: 680px; border: solid 1px rgb(215, 215, 215); border-radius: 20px; background-color: white; text-align: left;" id="sidebar">
+                    <div style="margin-left: 20px; margin-right: 10px; padding: 15px; width: auto; min-width: 100px; height: 680px; border: solid 1px rgb(215, 215, 215); border-radius: 20px; background-color: white; text-align: center;" id="sidebar">
+                        <H1 style="font-size: 30px; margin: 0px; margin-bottom: 20px; font-family: Arial, Helvetica, sans-serif;">Menu</H1>
                         <button class="side-but">Items</button><br>
                         <button class="side-but">Users</button><br>
                         <button class="side-but">Orders</button>
