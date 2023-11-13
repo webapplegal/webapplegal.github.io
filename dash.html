@@ -34,7 +34,7 @@
             justify-content: left;
             box-shadow: 10px 0px 20px 2px rgba(0, 0, 0, 0.2);
         }
-        #menu-sub{
+        .menu-sub{
             visibility: hidden;
             height: 20px;
             justify-content: center;
@@ -147,17 +147,17 @@
                 <div style="display: flex; background-color: white; margin-right: 10px;"> 
                     <div style="width: 50px; position: relative;">
                         <div style="margin-left: 10px; margin-right: 10px; padding: 15px; height: 640px; border: solid 1px rgb(215, 215, 215); border-radius: 20px; background-color: white; text-align: left;" id="sidebar">
-                            <button class="side-but" onclick="this.focus();" onfocus="document.getElementById('menu-sub').style.visibility='visible';" style="padding: 10px;">
+                            <button class="side-but" onclick="this.focus();" onfocus="makeSubMenuVisible()" style="padding: 10px;">
                                 <img width=20px' style='mix-blend-mode: darken;' src='https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/objects.png'>
-                            </button><span id="menu-sub">Items</span><br>
+                            </button><span class="menu-sub">Items</span><br>
 
-                            <button class="side-but" onclick="this.focus();" onfocus="document.getElementById('menu-sub').style.visibility='visible';" style="padding: 10px;">
+                            <button class="side-but" onclick="this.focus();" onfocus="makeSubMenuVisible()" style="padding: 10px;">
                                 <img width="20px" src="https://www.ischool.utexas.edu/sites/default/files/user.png" alt="">
-                            </button><span id="menu-sub">Users</span><br>
+                            </button><span class="menu-sub">Users</span><br>
 
-                            <button class="side-but" onclick="this.focus();" onfocus="document.getElementById('menu-sub')"style="padding: 8px;">
+                            <button class="side-but" onclick="this.focus();" onfocus="makeSubMenuVisible()" style="padding: 8px;">
                                 <img width="25px" src="https://icons.veryicon.com/png/o/miscellaneous/icondian/icon-order-1.png" alt="">
-                            </button><span id="menu-sub">Orders</span>
+                            </button><span class="menu-sub">Orders</span>
                         </div>
                     </div>
                     
@@ -189,4 +189,15 @@
     
 
 </body>
+<script>
+    function makeSubMenuVisible(){
+        
+        const menuitems = document.getElementsByClassName('menu-sub');
+        for(let i=0;i<menuitems.length;i++){
+            menuitems[i].style.visibility = "visible";
+        }
+    
+    }
+</script>
 </html>
+
