@@ -20,6 +20,33 @@
             justify-content: center;
         }
 
+        #sidebar{
+            width: 40px;
+            position: relative;
+            text-align: left;
+            justify-content: left;
+            transition: 0.2s;
+        }
+        #sidebar:hover{
+            width: 200px;
+            position: relative;
+            text-align: left;
+            justify-content: left;
+            box-shadow: 10px 0px 20px 2px rgba(0, 0, 0, 0.2);
+        }
+        #menu-sub{
+            visibility: hidden;
+            height: 20px;
+            justify-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 14px;
+            width: 40px;
+            margin-left: auto;
+            text-align: center;
+        }
+    
+
 
         #ham{
             margin-right: 10px;
@@ -48,7 +75,8 @@
             transform: translate(-200px, 60px);
         }
         .side-but{
-            width: 95px;
+            width: 40px;
+            height: 40px;
             text-align: center;
             background-color: rgb(255, 255, 255);
             border: 1px solid rgb(210, 210, 210);
@@ -56,20 +84,19 @@
             font-size: 18px;
             font-family: Arial, Helvetica, sans-serif;
             margin-bottom: 5px;
-            padding: 5px;
-            padding-left: 10px;
             transition: 0.3s; 
+            margin-right: 10px;
         }
         .side-but:hover{
             box-shadow: 0px 0px 20px 5px rgba(128, 128, 128, 0.25);
-            width: 100px;
+            
             font-size: 19px;
             background-color: rgb(223, 232, 241);
         }
         .side-but:focus{
             font-size: 18px;
             box-shadow: 0px 0px 20px 1px rgba(128, 128, 128, 0.25);
-            width: 95px;
+            
             color: rgb(6, 41, 79);
             border: 1px solid rgb(9, 63, 120);
             background-color: rgb(166, 203, 242);
@@ -117,15 +144,25 @@
                     </script>
                 </div>
 
-                <div style="display: flex; background-color: white;"> 
-                    <div style="margin-left: 10px; margin-right: 10px; padding: 15px; width: auto; min-width: 100px; height: 640px; border: solid 1px rgb(215, 215, 215); border-radius: 20px; background-color: white; text-align: center;" id="sidebar">
-                        <H1 style="font-size: 30px; margin: 0px; margin-bottom: 20px; font-family: Arial, Helvetica, sans-serif;">Menu</H1>
-                        <button class="side-but" onclick="this.focus()">Items</button><br>
-                        <button class="side-but" onclick="this.focus()">Users</button><br>
-                        <button class="side-but" onclick="this.focus()">Orders</button>
+                <div style="display: flex; background-color: white; margin-right: 10px;"> 
+                    <div style="width: 50px; position: relative;">
+                        <div style="margin-left: 10px; margin-right: 10px; padding: 15px; height: 640px; border: solid 1px rgb(215, 215, 215); border-radius: 20px; background-color: white; text-align: left;" id="sidebar">
+                            <button class="side-but" onclick="this.focus();" onfocus="document.getElementById('menu-sub').style.visibility='visible';" style="padding: 10px;">
+                                <img width=20px' style='mix-blend-mode: darken;' src='https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/objects.png'>
+                            </button><span id="menu-sub">Items</span><br>
+
+                            <button class="side-but" onclick="this.focus();" onfocus="document.getElementById('menu-sub').style.visibility='visible';" style="padding: 10px;">
+                                <img width="20px" src="https://www.ischool.utexas.edu/sites/default/files/user.png" alt="">
+                            </button><span id="menu-sub">Users</span><br>
+
+                            <button class="side-but" onclick="this.focus();" onfocus="document.getElementById('menu-sub')"style="padding: 8px;">
+                                <img width="25px" src="https://icons.veryicon.com/png/o/miscellaneous/icondian/icon-order-1.png" alt="">
+                            </button><span id="menu-sub">Orders</span>
+                        </div>
                     </div>
                     
-                    <div style="margin-right: 10px; width: auto; min-width: 100px; height: 670px; border: solid 1px rgb(215, 215, 215); border-radius: 20px; background-color: white; text-align: left;">
+                    
+                    <div style="margin-left: 40px; margin-right: 10px; width: auto; min-width: 100px; height: 670px; border: solid 1px rgb(215, 215, 215); border-radius: 20px; background-color: white; text-align: left;">
                         <div style="display: flex;">
                             
                             <div style="padding: 20px; display: flex; flex-direction: row; justify-content: center; height: 680px;">
