@@ -33,7 +33,7 @@
             text-align: center;
             transition: 0.2s;
         }
-        #ham:hover{
+        #ham:focus{
             -webkit-transform: translateX(-180px);
             -webkit-transform: translateY(60px);
             background: white;
@@ -103,7 +103,7 @@
                 <div style="display: flex; flex-direction: row; justify-content: right; align-items: center; height: 40px; margin-right: 0px; background-color: rgb(36, 36, 36); padding-top: 10px;">
                     <h1 style="font-family: Arial, Helvetica, sans-serif; margin: 0; margin-right: 10px; color: white;">Dashboard </h1>
                     <div style="width: 40px;">
-                        <button id="ham" onclick="document.getElementById('ham').innerHTML=`<button class='sub-but'>Change Password</button><br><button class='sub-but'>Account Settings</button><br><button class='sub-but'>Users</button><br>`" onblur="document.getElementById('ham').innerHTML=`<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-NvfI8Zn1ZixUrDKtyy_LvvHpQ7ru0V-eHw&usqp=CAU' style='mix-blend-mode: lighten; width: 15px; margin-top: 3px;'>`">
+                        <button id="ham" onclick="this.focus(); document.getElementById('ham').innerHTML=`<button class='sub-but'>Change Password</button><br><button class='sub-but'>Account Settings</button><br><button class='sub-but'>Users</button><br>`" onblur="document.getElementById('ham').innerHTML=`<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-NvfI8Zn1ZixUrDKtyy_LvvHpQ7ru0V-eHw&usqp=CAU' style='mix-blend-mode: lighten; width: 15px; margin-top: 3px;'>`">
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-NvfI8Zn1ZixUrDKtyy_LvvHpQ7ru0V-eHw&usqp=CAU" style="mix-blend-mode: lighten; width: 15px; margin-top: 3px;">
                         </button>
                     </div>
