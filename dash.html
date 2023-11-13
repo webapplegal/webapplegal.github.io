@@ -147,15 +147,15 @@
                 <div style="display: flex; background-color: white; margin-right: 10px;"> 
                     <div style="width: 50px; position: relative;">
                         <div style="margin-left: 10px; margin-right: 10px; padding: 15px; height: 640px; border: solid 1px rgb(215, 215, 215); border-radius: 20px; background-color: white; text-align: left;" id="sidebar">
-                            <button class="side-but" onclick="this.focus();" onfocus="makeSubMenuVisible()" style="padding: 10px;">
+                            <button class="side-but" onclick="this.focus();" onfocus="makeSubMenuVisible()" onblur="hideSubMenu()"style="padding: 10px;">
                                 <img width=20px' style='mix-blend-mode: darken;' src='https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/objects.png'>
                             </button><span class="menu-sub"></span><br>
 
-                            <button class="side-but" onclick="this.focus();" onfocus="makeSubMenuVisible()" style="padding: 10px;">
+                            <button class="side-but" onclick="this.focus();" onfocus="makeSubMenuVisible()" onblur="hideSubMenu()" style="padding: 10px;">
                                 <img width="20px" src="https://www.ischool.utexas.edu/sites/default/files/user.png" alt="">
                             </button><span class="menu-sub"></span><br>
 
-                            <button class="side-but" onclick="this.focus();" onfocus="makeSubMenuVisible()" style="padding: 8px;">
+                            <button class="side-but" onclick="this.focus();" onfocus="makeSubMenuVisible()" onblur="hideSubMenu()" style="padding: 8px;">
                                 <img width="25px" src="https://icons.veryicon.com/png/o/miscellaneous/icondian/icon-order-1.png" alt="">
                             </button><span class="menu-sub"></span>
                         </div>
@@ -196,6 +196,13 @@
         menuitems[0].textContent = "Items"
         menuitems[1].textContent = "Users"
         menuitems[2].textContent = "Orders"
+    }
+    function hideSubMenu(){
+        
+        const menuitems = document.getElementsByClassName('menu-sub');
+        menuitems[0].textContent = ""
+        menuitems[1].textContent = ""
+        menuitems[2].textContent = ""
     }
 </script>
 </html>
