@@ -21,7 +21,7 @@
         }
 
         #sidebar{
-            width: 40px;
+            width: 43px;
             position: relative;
             text-align: left;
             justify-content: left;
@@ -35,7 +35,7 @@
             box-shadow: 10px 0px 20px 2px rgba(0, 0, 0, 0.2);
         }
         .menu-sub{
-            visibility: hidden;
+            visibility: visible;
             height: 20px;
             justify-content: center;
             font-family: Arial, Helvetica, sans-serif;
@@ -149,15 +149,15 @@
                         <div style="margin-left: 10px; margin-right: 10px; padding: 15px; height: 640px; border: solid 1px rgb(215, 215, 215); border-radius: 20px; background-color: white; text-align: left;" id="sidebar">
                             <button class="side-but" onclick="this.focus();" onfocus="makeSubMenuVisible()" style="padding: 10px;">
                                 <img width=20px' style='mix-blend-mode: darken;' src='https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/objects.png'>
-                            </button><span class="menu-sub">Items</span><br>
+                            </button><span class="menu-sub"></span><br>
 
                             <button class="side-but" onclick="this.focus();" onfocus="makeSubMenuVisible()" style="padding: 10px;">
                                 <img width="20px" src="https://www.ischool.utexas.edu/sites/default/files/user.png" alt="">
-                            </button><span class="menu-sub">Users</span><br>
+                            </button><span class="menu-sub"></span><br>
 
                             <button class="side-but" onclick="this.focus();" onfocus="makeSubMenuVisible()" style="padding: 8px;">
                                 <img width="25px" src="https://icons.veryicon.com/png/o/miscellaneous/icondian/icon-order-1.png" alt="">
-                            </button><span class="menu-sub">Orders</span>
+                            </button><span class="menu-sub"></span>
                         </div>
                     </div>
                     
@@ -193,10 +193,9 @@
     function makeSubMenuVisible(){
         
         const menuitems = document.getElementsByClassName('menu-sub');
-        for(let i=0;i<menuitems.length;i++){
-            menuitems[i].style.visibility = "visible";
-        }
-    
+        menuitems[0].textContent = "Items"
+        menuitems[1].textContent = "Users"
+        menuitems[2].textContent = "Orders"
     }
 </script>
 </html>
