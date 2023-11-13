@@ -39,9 +39,22 @@
             width: 220px;
             height: 150px;
             border-radius: 10px;
+            -webkit-transform: translate(-190px, 60px);
             transform: translate(-190px, 60px);
         }
-        
+        .side-but{
+            width: 100px;
+            text-align: left;
+            background-color: rgb(241, 241, 241);
+            border: 0px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-bottom: 5px;
+            padding: 5px;
+            padding-left: 10px;
+            transition: 0.5s; 
+        }
 
         .sub-but{
             width: 180px;
@@ -92,9 +105,9 @@
                 <div style="width: 99%;min-width: 100px; height: 680px; border: solid 1px gray; border-radius: 10px; background-color: white; text-align: left;">
                     <div style="display: flex;">
                         <div style="padding: 10px; margin: 5px; width: 10;" id="sidebar">
-                            <button class="sub-but" style="width: 75px;">Items</button><br>
-                            <button class="sub-but" style="width: 75px;">Users</button><br>
-                            <button class="sub-but" style="width: 75px;">Orders</button>
+                            <button class="side-but">Items</button><br>
+                            <button class="side-but">Users</button><br>
+                            <button class="side-but">Orders</button>
                         </div>
                         <div style="display: flex; flex-direction: row; justify-content: center;">
                             <p style="width: 47%; margin: 10px; font-family: Arial, Helvetica, sans-serif;">
