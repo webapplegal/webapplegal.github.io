@@ -7,12 +7,10 @@
 
     <style>
         body{
-            background-color: rgb(240, 240, 240);   
+            background-color: rgb(255, 255, 255);   
         }
 
-        #container{
-            display: flex;
-        }
+        
         #side-bar{
             width: 20px;
             position: relative;
@@ -81,11 +79,9 @@
 
     <div id="container">
 
-
-        
-        <div style="width: 98%; text-align: right;">
+        <div style="width: auto; text-align: right;">
             
-                <div style="display: flex; flex-direction: row; justify-content: right; align-items: center; height: 40px;">
+                <div style="display: flex; flex-direction: row; justify-content: right; align-items: center; height: 40px; margin-right: 20px;">
                     <h1 style="font-family: Arial, Helvetica, sans-serif; margin: 0; margin-right: 10px;">Dashboard </h1>
                     <div style="width: 40px;">
                         <button id="ham" onclick="document.getElementById('ham').innerHTML=`<button class='sub-but'>Change Password</button><br><button class='sub-but'>Account Settings</button><br><button class='sub-but'>Users</button><br>`" onblur="document.getElementById('ham').innerHTML=`<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-NvfI8Zn1ZixUrDKtyy_LvvHpQ7ru0V-eHw&usqp=CAU' style='mix-blend-mode: lighten; width: 15px; margin-top: 3px;'>`">
@@ -94,38 +90,41 @@
                     </div>
                     
                 </div>
-                <div style="text-align: right; display: flex; justify-content: right; margin-right: 10px; margin-bottom: 10px;">
+                <div style="text-align: right; display: flex; justify-content: right; margin-right: 20px; margin-bottom: 10px;">
                     <h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; margin: 0; margin-right: 10px;">Bienvenido</h1><span id="user" style="font-size: 16px; font-family: Arial, Helvetica, sans-serif;"></span>
                     <script>
                             document.getElementById('user').textContent = localStorage.getItem('USER')
                     </script>
                 </div>
-                
 
-                <div style="width: 99%;min-width: 100px; height: 680px; border: solid 1px gray; border-radius: 10px; background-color: white; text-align: left;">
-                    <div style="display: flex;">
-                        <div style="padding: 10px; margin: 5px; width: 10;" id="sidebar">
-                            <button class="side-but">Items</button><br>
-                            <button class="side-but">Users</button><br>
-                            <button class="side-but">Orders</button>
-                        </div>
-                        <div style="display: flex; flex-direction: row; justify-content: center;">
-                            <p style="width: 47%; margin: 10px; font-family: Arial, Helvetica, sans-serif;">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, esse, laudantium recusandae vero vel dolores tempora eum enim labore reiciendis nihil cum eos qui? Repellendus voluptates aut veniam ad quae.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, esse, laudantium recusandae vero vel dolores tempora eum enim labore reiciendis nihil cum eos qui? Repellendus voluptates aut veniam ad quae.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, esse, laudantium recusandae vero vel dolores tempora eum enim labore reiciendis nihil cum eos qui? Repellendus voluptates aut veniam ad quae.
-                            </p>
-                            <p style="width: 47%; margin: 10px; font-family: Arial, Helvetica, sans-serif;">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, esse, laudantium recusandae vero vel dolores tempora eum enim labore reiciendis nihil cum eos qui? Repellendus voluptates aut veniam ad quae.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, esse, laudantium recusandae vero vel dolores tempora eum enim labore reiciendis nihil cum eos qui? Repellendus voluptates aut veniam ad quae.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, esse, laudantium recusandae vero vel dolores tempora eum enim labore reiciendis nihil cum eos qui? Repellendus voluptates aut veniam ad quae.
-                            </p>
-                        </div>
+                <div style="display: flex;"> 
+                    <div style="margin-left: 20px; margin-right: 10px; padding: 15px; width: auto; min-width: 100px; height: 680px; border: solid 1px rgb(215, 215, 215); border-radius: 20px; background-color: white; text-align: left;" id="sidebar">
+                        <button class="side-but">Items</button><br>
+                        <button class="side-but">Users</button><br>
+                        <button class="side-but">Orders</button>
                     </div>
                     
-
-                    
+                    <div style="margin-right: 20px; width: auto; min-width: 100px; height: 680px; border: solid 1px rgb(215, 215, 215); border-radius: 20px; background-color: white; text-align: left;">
+                        <div style="display: flex;">
+                            
+                            <div style="display: flex; flex-direction: row; justify-content: center;">
+                                <p style="width: 47%; margin: 10px; font-family: Arial, Helvetica, sans-serif;">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, esse, laudantium recusandae vero vel dolores tempora eum enim labore reiciendis nihil cum eos qui? Repellendus voluptates aut veniam ad quae.
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, esse, laudantium recusandae vero vel dolores tempora eum enim labore reiciendis nihil cum eos qui? Repellendus voluptates aut veniam ad quae.
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, esse, laudantium recusandae vero vel dolores tempora eum enim labore reiciendis nihil cum eos qui? Repellendus voluptates aut veniam ad quae.
+                                </p>
+                                <p style="width: 47%; margin: 10px; font-family: Arial, Helvetica, sans-serif;">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, esse, laudantium recusandae vero vel dolores tempora eum enim labore reiciendis nihil cum eos qui? Repellendus voluptates aut veniam ad quae.
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, esse, laudantium recusandae vero vel dolores tempora eum enim labore reiciendis nihil cum eos qui? Repellendus voluptates aut veniam ad quae.
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, esse, laudantium recusandae vero vel dolores tempora eum enim labore reiciendis nihil cum eos qui? Repellendus voluptates aut veniam ad quae.
+                                </p>
+                            </div>
+                        </div>
+                        
+                    </div>
                 </div>
+
+                
         </div>
 
     </div>
