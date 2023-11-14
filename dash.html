@@ -7,33 +7,75 @@
 
     <style>
         html,body{
-            background-color: rgb(255, 255, 255);   
+            background-color: rgb(245, 245, 245);   
             padding: 0px;
             margin: 0px;
         }
 
-        
-        #side-bar{
-            width: 20px;
-            position: relative;
-            text-align: center;
-            justify-content: center;
+        .column{
+            display: flex;
+            gap: 10px;
+            margin: 5px;
+            padding: 0px;
+            height: 430px;
+        }
+
+    
+
+        .column-full{
+            background-color: white;
+            display: flex;
+            gap: 10px;
+            margin: 5px;
+            padding: 0px;
+            height: 540px; 
+        }
+
+
+        .row{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+
+        #bottombar{
+            background-color: rgb(254, 254, 254);
+            padding: 15px;
+            border: 1px solid gray;
+            border-radius: 15px;
+            transition: 0.2s;
+            width: 405px; height: 70px;
+        }
+        #bottombar:hover{
+            background-color: white;
+            box-shadow: 10px 0px 20px 2px rgba(0, 0, 0, 0.2);
+            height: 500px;
+            transform: translateY(-430px);
         }
 
         #sidebar{
-            width: 40px;
-            position: relative;
+            width: 70px;
+            height: 400px;
+            padding: 15px;
+            position: absolute;
+            background-color: rgb(254, 254, 254);
+            border: 1px solid gray;
+            border-radius: 15px;
+            
             text-align: left;
             justify-content: left;
             transition: 0.2s;
         }
+
         #sidebar:hover{
-            width: 200px;
-            position: relative;
-            text-align: left;
-            justify-content: left;
+            background-color: white;
+            position: absolute;
+            margin-right: 10px;
+            width: 300px;
             box-shadow: 10px 0px 20px 2px rgba(0, 0, 0, 0.2);
         }
+
         .menu-sub{
             visibility: visible;
             height: 20px;
@@ -75,8 +117,8 @@
             transform: translate(-200px, 60px);
         }
         .side-but{
-            width: 40px;
-            height: 40px;
+            width: 80px;
+            height: 80px;
             text-align: center;
             background-color: rgb(255, 255, 255);
             border: 1px solid rgb(210, 210, 210);
@@ -89,7 +131,6 @@
         }
         .side-but:hover{
             box-shadow: 0px 0px 20px 5px rgba(128, 128, 128, 0.25);
-            
             font-size: 19px;
             background-color: rgb(223, 232, 241);
         }
@@ -119,63 +160,83 @@
             background-color: rgb(240, 240, 240);
             color: black;
             box-shadow: 0px 0px 10px 2px rgba(128, 128, 128, 0.3);
+            
+        }
+        h3{
+            margin-top: 0px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16p;
         }
     </style>
 </head>
 <body>
 
-    <div id="container" style="margin: 0px;">
+    <div id="page-container" style="margin: 0px;">
 
-        <div style="width: auto; text-align: right; margin: 0px;">
+        <div style="display: flex; flex-direction: row; justify-content: right; align-items: center; height: 40px; margin-right:0px; background-color: rgb(36, 36, 36); padding-top: 10px;">
+            <h1 style="font-family: Arial, Helvetica, sans-serif; margin: 0; margin-right: 10px; color: white;">CALESA - P.O.S </h1>
+            <div style="width: 40px; margin-right: 10px;" id="user-menu">
+                <button id="ham" onclick="this.focus(); document.getElementById('ham').innerHTML=`<button class='sub-but'>Change Password</button><br><button class='sub-but'>Account Settings</button><br><button class='sub-but'>Users</button><br>`" onblur="document.getElementById('ham').innerHTML=`<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-NvfI8Zn1ZixUrDKtyy_LvvHpQ7ru0V-eHw&usqp=CAU' style='mix-blend-mode: lighten; width: 15px; margin-top: 3px;'>`">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-NvfI8Zn1ZixUrDKtyy_LvvHpQ7ru0V-eHw&usqp=CAU" style="mix-blend-mode: lighten; width: 15px; margin-top: 3px;">
+                </button>
+            </div>
+        </div>
+
+        <div id="user-details" style="text-align: right; display: flex; justify-content: right; margin-right: 0px; margin-bottom: 0px; background-color: rgb(36, 36, 36); padding-bottom: 10px;">
+            <h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; margin: 0; margin-right: 10px; color: white;">Bienvenido</h1><span id="user" style="font-size: 16px; font-family: Arial, Helvetica, sans-serif; margin-right: 20px; color: white;"></span>
+            <script>
+                    document.getElementById('user').textContent = localStorage.getItem('USER')
+            </script>
+        </div>
+
+        
+
+        <div style="display: flex; justify-content: center; align-items: flex-start; text-align: center;" id="body-content">
             
-                <div style="display: flex; flex-direction: row; justify-content: right; align-items: center; height: 40px; margin-right: 0px; background-color: rgb(36, 36, 36); padding-top: 10px;">
-                    <h1 style="font-family: Arial, Helvetica, sans-serif; margin: 0; margin-right: 10px; color: white;">Dashboard </h1>
-                    <div style="width: 40px;">
-                        <button id="ham" onclick="this.focus(); document.getElementById('ham').innerHTML=`<button class='sub-but'>Change Password</button><br><button class='sub-but'>Account Settings</button><br><button class='sub-but'>Users</button><br>`" onblur="document.getElementById('ham').innerHTML=`<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-NvfI8Zn1ZixUrDKtyy_LvvHpQ7ru0V-eHw&usqp=CAU' style='mix-blend-mode: lighten; width: 15px; margin-top: 3px;'>`">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-NvfI8Zn1ZixUrDKtyy_LvvHpQ7ru0V-eHw&usqp=CAU" style="mix-blend-mode: lighten; width: 15px; margin-top: 3px;">
-                        </button>
+            <div class="row"> 
+                <div class="column" style="width: 400px;">
+                    <div id="sidebar" style="margin: 0px;">
+                        <h3>HOT</h3>
                     </div>
-                    
-                </div>
-                <div style="text-align: right; display: flex; justify-content: right; margin-right: 0px; margin-bottom: 10px; background-color: rgb(36, 36, 36); padding-bottom: 10px;">
-                    <h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; margin: 0; margin-right: 10px; color: white;">Bienvenido</h1><span id="user" style="font-size: 16px; font-family: Arial, Helvetica, sans-serif; margin-right: 20px; color: white;"></span>
-                    <script>
-                            document.getElementById('user').textContent = localStorage.getItem('USER')
-                    </script>
-                </div>
-
-                <div style="display: flex; background-color: white; margin-right: 10px;"> 
-                    <div style="width: 50px; position: relative;">
-                        <div style="margin-left: 10px; margin-right: 10px; padding: 15px; height: 640px; border: solid 1px rgb(215, 215, 215); border-radius: 20px; background-color: white; text-align: left;" id="sidebar" onmouseover="makeSubMenuVisible()" onmouseleave="hideSubMenu()">
-                            <button class="side-but" onclick="this.focus();" onfocus="makeSubMenuVisible()" onblur="hideSubMenu()"style="padding: 10px;">
-                                <img width=20px' style='mix-blend-mode: darken;' src='https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/objects.png'>
-                            </button><span class="menu-sub"></span><br>
-
-                            <button class="side-but" onclick="this.focus();" onfocus="makeSubMenuVisible()" onblur="hideSubMenu()" style="padding: 10px;">
-                                <img width="20px" src="https://www.ischool.utexas.edu/sites/default/files/user.png" alt="">
-                            </button><span class="menu-sub"></span><br>
-
-                            <button class="side-but" onclick="this.focus();" onfocus="makeSubMenuVisible()" onblur="hideSubMenu()" style="padding: 8px;">
-                                <img width="25px" src="https://icons.veryicon.com/png/o/miscellaneous/icondian/icon-order-1.png" alt="">
-                            </button><span class="menu-sub"></span>
-                        </div>
+    
+                    <div id="sidebar" style="margin-left: 110px;">
+                        <h3>COLD</h3>
                     </div>
-                    
-                    
-                    <div style="margin-left: 40px; margin-right: 10px; width: auto; min-width: 100px; height: 670px; border: solid 1px rgb(215, 215, 215); border-radius: 20px; background-color: white; text-align: left;">
-                        <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 5px;">
-                                <div style="padding: 20px; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; overflow: scroll;">
-                                    <p style="width: auto; height: min-content; margin: 2px; font-family: Arial, Helvetica, sans-serif; margin-right: 10px;">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, esse, laudantium recusandae vero vel dolores tempora eum enim labore reiciendis nihil cum eos qui? Repellendus voluptates aut veniam ad quae.
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, esse, laudantium recusandae vero vel dolores tempora eum enim labore reiciendis nihil cum eos qui? Repellendus voluptates aut veniam ad quae.
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, esse, laudantium recusandae vero vel dolores tempora eum enim labore reiciendis nihil cum eos qui? Repellendus voluptates aut veniam ad quae.
-                                    </p>
-                                    
-                                </div>
-                        </div>
+                    <div id="sidebar" style="margin-left: 220px;">
+                        <h3>CAKES</h3>
+                    </div>
+    
+                    <div id="sidebar" style="margin-left: 330px;">
+                        <h3>OTHER</h3>
+                    </div>
+                </div>  
+
+                <div id="bottombar">
+                    <h3>Herramientas</h3>
+
+                </div>  
+            </div>
+
+            <div id="subtotal-pane" class="column-full" style="margin-left: 10px; width: 360px; text-align: center; border: 1px solid gray; border-radius: 15px;">
+                <div style="text-align: left; padding-left: 30px; width: 300px;">
+                        <h1 style="font-family: Arial, Helvetica, sans-serif; margin-top: 20px; text-align: right;">Subtotal</h1>
+                        <span style="font-weight: bold; font-family: Arial, Helvetica, sans-serif;">Orden: </span><span id="orderNo">109292831</span> <br>
+                        <span style="font-weight: bold; font-family: Arial, Helvetica, sans-serif;">Fecha: </span><span id="date">13/11/2023</span> <br>
+                        <span style="font-weight: bold; font-family: Arial, Helvetica, sans-serif;">Fecha: </span><span id="date">13/11/2023</span> <br>
+                        <br>
+                        <span style="font-weight: bold; font-size: 16px; font-family: Arial, Helvetica, sans-serif;"> Articulos:</span>
+                        <ul style="list-style: none; text-align: left;">
+                            <li style="display: flex; flex-direction: row;"><div style="width: 130px;">Frappe Natural</div><div style="width: 50px;">(G)</div><div style="width: 50px;">$50.00</div></li>
+                        </ul>
+                </div>
                         
-                    </div>
-                </div>
+            </div>
+                
+
+                    
+            
+                
 
                 
         </div>
@@ -186,18 +247,20 @@
 </body>
 <script>
     function makeSubMenuVisible(){
-        
-        const menuitems = document.getElementsByClassName('menu-sub');
-        menuitems[0].textContent = "Items"
-        menuitems[1].textContent = "Users"
-        menuitems[2].textContent = "Orders"
+        /*const menuitems = document.getElementsByClassName('menu-sub');
+        menuitems[0].textContent = "CH"
+        menuitems[1].textContent = "M"
+        menuitems[2].textContent = "G"
+        */
     }
+    
     function hideSubMenu(){
-        
+    /* 
         const menuitems = document.getElementsByClassName('menu-sub');
         menuitems[0].textContent = ""
         menuitems[1].textContent = ""
         menuitems[2].textContent = ""
+        */
     }
 </script>
 </html>
