@@ -35,7 +35,7 @@
         .row{
             display: flex;
             flex-direction: column;
-            gap: 5px;
+            justify-content: right;
         }
 
 
@@ -45,19 +45,21 @@
             border: 1px solid gray;
             border-radius: 15px;
             transition: 0.2s;
-            width: 405px; height: 70px;
+            width: 340px; height: 70px;
+            margin-top: 6px;
         }
         #bottombar:hover{
             background-color: white;
             box-shadow: 10px 0px 20px 2px rgba(0, 0, 0, 0.2);
-            height: 500px;
-            transform: translateY(-430px);
+            height: 400px;
+            transform: translateY(-330px);
         }
 
         #sidebar{
-            width: 70px;
+            width: 80px;
             height: 400px;
             padding: 15px;
+            padding-top: 7px;
             position: absolute;
             background-color: rgb(254, 254, 254);
             border: 1px solid gray;
@@ -168,6 +170,32 @@
             font-family: Arial, Helvetica, sans-serif;
             font-size: 16p;
         }
+        .primary-button{
+            margin: 5px;
+            background-color: black;
+            border: 1px solid black;
+            color: white;
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 10px;
+            padding: 10px;
+            width: 138px;
+        }
+        .secondary-button{
+            margin: 5px;
+            background-color: white;
+            border: 2px solid gray;
+            color: rgb(42, 42, 42);
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 10px;
+            padding: 10px;
+            width: 138px;
+        }
     </style>
 </head>
 <body>
@@ -192,24 +220,22 @@
 
         
 
-        <div style="display: flex; justify-content: center; align-items: flex-start; text-align: center;" id="body-content">
+        <div style="display: flex; justify-content: center; align-items: flex-start; text-align: center; flex-wrap: wrap-reverse;" id="body-content">
             
             <div class="row"> 
-                <div class="column" style="width: 400px;">
+                <div class="column" style="width: 360px;">
                     <div id="sidebar" style="margin: 0px;">
                         <h3>HOT</h3>
                     </div>
     
-                    <div id="sidebar" style="margin-left: 110px;">
+                    <div id="sidebar" style="margin-left: 125px;">
                         <h3>COLD</h3>
                     </div>
-                    <div id="sidebar" style="margin-left: 220px;">
-                        <h3>CAKES</h3>
-                    </div>
-    
-                    <div id="sidebar" style="margin-left: 330px;">
+                    <div id="sidebar" style="margin-left: 250px;">
                         <h3>OTHER</h3>
                     </div>
+    
+                    
                 </div>  
 
                 <div id="bottombar">
@@ -226,9 +252,13 @@
                         <span style="font-weight: bold; font-family: Arial, Helvetica, sans-serif;">Fecha: </span><span id="date">13/11/2023</span> <br>
                         <br>
                         <span style="font-weight: bold; font-size: 16px; font-family: Arial, Helvetica, sans-serif;"> Articulos:</span>
-                        <ul style="list-style: none; text-align: left;">
+                        <ul style="list-style: none; text-align: left; height: 260px; overflow-y: scroll;">
                             <li style="display: flex; flex-direction: row;"><div style="width: 130px;">Frappe Natural</div><div style="width: 50px;">(G)</div><div style="width: 50px;">$50.00</div></li>
                         </ul>
+
+                        <button class="primary-button">CASH</button>
+                        <button class="secondary-button">CARD</button>
+
                 </div>
                         
             </div>
