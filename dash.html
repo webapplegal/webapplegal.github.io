@@ -44,7 +44,7 @@
                         <button class="men-but" id="Pastel Choc" onclick="javascript:this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Pastel Choc</button>
                         <button class="men-but" id="Pay Limon" onclick="javascript:this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Pay Limon</button>
                         <button class="men-but" id="Pay Chisp." onclick="javascript:this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Pay Chisp</button>
-                        <button class="men-but" id="Pay Fram." onclick="javascript:this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Pay Fram.</button>
+                        <button class="men-but" id="Pay Fram" onclick="javascript:this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Pay Fram</button>
                         <button class="men-but" id="Choco flan" onclick="javascript:this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Choco flan</button>
                         <button class="men-but" id="Muffin" onclick="javascript:this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Muffin</button>
                         <button class="men-but" id="Brownie" onclick="javascript:this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Brownie</button>
@@ -81,7 +81,7 @@
                         <button class="men-but" id="Amer - Sabor" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Amer Sabor</button>
                         <button class="men-but" id="Latte" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Latte</button>
                         <button class="men-but" id="Latte - Sabor" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Latte Sabor</button>
-                        <button class="men-but" id="Cap" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Cap.</button>
+                        <button class="men-but" id="Cap" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Cap</button>
                         <button class="men-but" id="Cap - Sabor" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Cap Sabor</button>
                         <button class="men-but" id="Chai" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Chai</button>
                         <button class="men-but" id="Matcha" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Matcha</button>
@@ -176,6 +176,15 @@
     
         List.innerHTML += `<li style="display: flex; flex-direction: row;"><div style="width: 130px;">${ID}</div><div style="width: 50px;">${size}</div><div style="width: 50px;">${itemCosts[ID][size].toLocaleString('en-US', {style: 'currency', currency: 'USD',})}</div></li>`
         
+        if(items[ID]==null){
+            items.ID = itemCosts[ID][size]
+        } 
+        else {
+            items[ID] += itemCosts[ID][size]
+        }
+
+        console.log(items)
+
     }
 
 </script>
