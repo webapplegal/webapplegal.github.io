@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="dash.css">
+    <script type="module" src="./JS/dbconfig.js"></script>
+    <script type="module" src="LoadItems.js"></script>
 
     <style>
         
@@ -36,52 +38,54 @@
             
             <div class="row"> 
                 <div class="column" style="width: 360px;">
-                    <div id="sidebar-1" style="margin: 250px; transform: translateY(-250px);">
+
+                    <div id="sidebar-1" style="margin-left: 250px;">
                         <h3>OTHER</h3>
-                        <button class="men-but" id="Pastel Choc" onmouseover="this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Pastel Choc.</button>
-                        <button class="men-but" id="Pay Limon" onmouseover="this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Pay Limon</button>
-                        <button class="men-but" id="Pay Q.Chisp." onmouseover="this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Pay Q.Chisp.</button>
-                        <button class="men-but" id="Pay Q.Fram." onmouseover="this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Pay Q.Fram.</button>
-                        <button class="men-but" id="Chocoflan" onmouseover="this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Chocoflan</button>
-                        <button class="men-but" id="Muffin" onmouseover="this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Muffin</button>
-                        <button class="men-but" id="Brownie" onmouseover="this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Brownie</button>
-                        <button class="men-but" id="Galleta" onmouseover="this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Galleta</button>
-                        <button class="men-but" id="Agua 1L" onmouseover="this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Agua 1L</button>
-                        <button class="men-but" id="Agua 500ml" onmouseover="this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Agua 500ml</button>
-                        <button class="men-but" id="Coca-cola" onmouseover="this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Coca-cola</button>
-                        <button class="men-but" id="Refresco Sabor" onmouseover="this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Refresco Sabor</button>
+                        <button class="men-but" id="Pastel Choc" onclick="javascript:this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Pastel Choc</button>
+                        <button class="men-but" id="Pay Limon" onclick="javascript:this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Pay Limon</button>
+                        <button class="men-but" id="Pay Chisp." onclick="javascript:this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Pay Chisp</button>
+                        <button class="men-but" id="Pay Fram." onclick="javascript:this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Pay Fram.</button>
+                        <button class="men-but" id="Choco flan" onclick="javascript:this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Choco flan</button>
+                        <button class="men-but" id="Muffin" onclick="javascript:this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Muffin</button>
+                        <button class="men-but" id="Brownie" onclick="javascript:this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Brownie</button>
+                        <button class="men-but" id="Galleta" onclick="javascript:this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Galleta</button>
+                        <button class="men-but" id="Agua 1L" onclick="javascript:this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Agua 1L</button>
+                        <button class="men-but" id="Agua 500ml" onclick="javascript:this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Agua 500ml</button>
+                        <button class="men-but" id="Coca cola" onclick="javascript:this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Coca cola</button>
+                        <button class="men-but" id="Refre Sabor" onclick="javascript:this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Refre Sabor</button>
                     
                     </div>
-    
+
                     <div id="sidebar-2" style="margin-left: 125px;">
                         <h3>COLD</h3>
-                        <button class="men-but" id="Frappe Natural" onmouseover="this.focus()" onfocus="showSub(this.id,2)" onblur="hideSub(this.id)">Frappe Natural</button>
-                        <button class="men-but" id="Frappe Moka" onmouseover="this.focus()" onfocus="showSub(this.id,2)" onblur="hideSub(this.id)">Frappe Moka</button>
-                        <button class="men-but" id="Frappe Cajeta" onmouseover="this.focus()" onfocus="showSub(this.id,2)" onblur="hideSub(this.id)">Frappe Cajeta</button>
-                        <button class="men-but" id="Frappe Oreo" onmouseover="this.focus()" onfocus="showSub(this.id,2)" onblur="hideSub(this.id)">Frappe Oreo</button>
-                        <button class="men-but" id="Frappe Nutella" onmouseover="this.focus()" onfocus="showSub(this.id,2)" onblur="hideSub(this.id)">Frappe Nutella</button>
-                        <button class="men-but" id="Frappe Ferrero" onmouseover="this.focus()" onfocus="showSub(this.id,2)" onblur="hideSub(this.id)">Frappe Ferrero</button>
-                        <button class="men-but" id="Frappe Chai" onmouseover="this.focus()" onfocus="showSub(this.id,2)" onblur="hideSub(this.id)">Frappe Chai</button>
-                        <button class="men-but" id="Frappe Matcha" onmouseover="this.focus()" onfocus="showSub(this.id,2)" onblur="hideSub(this.id)">Frappe Matcha</button>
-                        <button class="men-but" id="Frappe Perlas" onmouseover="this.focus()" onfocus="showSub(this.id,2)" onblur="hideSub(this.id)">Frappe Perlas</button>
-                        <button class="men-but" id="Frappe Vainilla" onmouseover="this.focus()" onfocus="showSub(this.id,2)" onblur="hideSub(this.id)">Frappe Vainilla</button>
-                        <button class="men-but" id="Frappe Crem.Ir." onmouseover="this.focus()" onfocus="showSub(this.id,2)" onblur="hideSub(this.id)">Frappe Crem.Ir.</button>
-                        <button class="men-but" id="Frappe Amaretto" onmouseover="this.focus()" onfocus="showSub(this.id,2)" onblur="hideSub(this.id)">Frappe Amaretto</button>
+                        <button class="men-but" id="Frappe - Natur" onclick="javascript:this.focus()" onfocus="showSub(this.id,2)" onblur="hideSub(this.id)">Frappe - Natur</button>
+                        <button class="men-but" id="Frappe - Moka" onclick="javascript:this.focus()" onfocus="showSub(this.id,2)" onblur="hideSub(this.id)">Frappe - Moka</button>
+                        <button class="men-but" id="Frappe - Cajeta" onclick="javascript:this.focus()" onfocus="showSub(this.id,2)" onblur="hideSub(this.id)">Frappe - Cajeta</button>
+                        <button class="men-but" id="Frappe - Oreo" onclick="javascript:this.focus()" onfocus="showSub(this.id,2)" onblur="hideSub(this.id)">Frappe - Oreo</button>
+                        <button class="men-but" id="Frappe - Nutella" onclick="javascript:this.focus()" onfocus="showSub(this.id,2)" onblur="hideSub(this.id)">Frappe - Nutella</button>
+                        <button class="men-but" id="Frappe - Ferrero" onclick="javascript:this.focus()" onfocus="showSub(this.id,2)" onblur="hideSub(this.id)">Frappe - Ferrero</button>
+                        <button class="men-but" id="Frappe - Chai" onclick="javascript:this.focus()" onfocus="showSub(this.id,2)" onblur="hideSub(this.id)">Frappe - Chai</button>
+                        <button class="men-but" id="Frappe - Matcha" onclick="javascript:this.focus()" onfocus="showSub(this.id,2)" onblur="hideSub(this.id)">Frappe - Matcha</button>
+                        <button class="men-but" id="Frappe - Perlas" onclick="javascript:this.focus()" onfocus="showSub(this.id,2)" onblur="hideSub(this.id)">Frappe - Perlas</button>
+                        <button class="men-but" id="Frappe - Sabor" onclick="javascript:this.focus()" onfocus="showSub(this.id,2)" onblur="hideSub(this.id)">Frappe - Sabor</button>
                     </div>
+
+                    
+    
                     
                     <div id="sidebar-3" style="margin-left: 0px;">
 
                         <h3>HOT</h3>
-                        <button class="men-but" id="Amer." onmouseover="this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Amer.</button>
-                        <button class="men-but" id="Amer. +Lech" onmouseover="this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Amer. c/Leche</button>
-                        <button class="men-but" id="Amer. +Sabor" onmouseover="this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Amer. c/Sabor</button>
-                        <button class="men-but" id="Latte" onmouseover="this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Latte</button>
-                        <button class="men-but" id="Latte + Sabor" onmouseover="this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Latte Sabor</button>
-                        <button class="men-but" id="Cap." onmouseover="this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Cap.</button>
-                        <button class="men-but" id="Cap. +Sabor" onmouseover="this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Cap. Sabor</button>
-                        <button class="men-but" id="Chai" onmouseover="this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Chai</button>
-                        <button class="men-but" id="Matcha" onmouseover="this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Matcha</button>
-                        <button class="men-but" id="Te" onmouseover="this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Te</button>
+                        <button class="men-but" id="Amer" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Amer</button>
+                        <button class="men-but" id="Amer - Leche" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Amer Leche</button>
+                        <button class="men-but" id="Amer - Sabor" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Amer Sabor</button>
+                        <button class="men-but" id="Latte" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Latte</button>
+                        <button class="men-but" id="Latte - Sabor" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Latte Sabor</button>
+                        <button class="men-but" id="Cap" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Cap.</button>
+                        <button class="men-but" id="Cap - Sabor" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Cap Sabor</button>
+                        <button class="men-but" id="Chai" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Chai</button>
+                        <button class="men-but" id="Matcha" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Matcha</button>
+                        <button class="men-but" id="Te" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Te</button>
                         
                         </div>
     
@@ -120,6 +124,7 @@
     function showSub(ID,options){
         const menuitems = document.getElementById(ID);
 
+        if( menuitems.matches(':focus')){
         if(options==1){
             setTimeout(() => {  
 
@@ -148,10 +153,8 @@
             `
 
             }, 100);}
+        }
 
-        
-        
-        //console.log("showing",ID)
     }
     
     function hideSub(ID){
@@ -171,11 +174,23 @@
         let List = document.getElementById('orderList')
         let items = {}
     
-        List.innerHTML += `<li style="display: flex; flex-direction: row;"><div style="width: 130px;">${ID}</div><div style="width: 50px;">${size}</div><div style="width: 50px;">${List[ID]}</div></li>`
-        
-        console.log(items[ID])
+        List.innerHTML += `<li style="display: flex; flex-direction: row;"><div style="width: 130px;">${ID}</div><div style="width: 50px;">${size}</div><div style="width: 50px;">${itemCosts[ID][size].toLocaleString('en-US', {style: 'currency', currency: 'USD',})}</div></li>`
         
     }
+
+</script>
+
+<script type="module">
+    import {getDatabase, set, get, update, remove, ref, child, onValue} from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js"; 
+    window.ItemDir = ref(db,'Items/');
+    window.itemCosts = {}
+
+    onValue(ItemDir, (snapshot)=>{
+        snapshot.forEach(
+        function(ChildSnapshot){
+            itemCosts[ChildSnapshot.key] = ChildSnapshot.val()
+        })
+    });
 </script>
 </html>
 
