@@ -4,204 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="dash.css">
 
     <style>
-        html,body{
-            background-color: rgb(245, 245, 245);   
-            padding: 0px;
-            margin: 0px;
-            
-        }
-
-        .size-button{
-            width: 60px;
-            height: 30px;
-            margin-top: 5px;
-            padding: 1px;
-            border-radius: 5px;
-            background-color: white;
-            color: black;
-            border: 1px solid gray;
-        }
-
-        .column{
-            display: flex;
-            gap: 10px;
-            margin: 5px;
-            padding: 0px;
-            height: 430px;
-        }
-
-
-        .column-full{
-            background-color: white;
-            display: flex;
-            gap: 10px;
-            margin: 5px;
-            padding: 0px;
-            height: 540px; 
-        }
-
-
-        .row{
-            display: flex;
-            flex-direction: column;
-            justify-content: right;
-        }
-
-
-        #bottombar{
-            background-color: rgb(254, 254, 254);
-            padding: 15px;
-            border: 1px solid gray;
-            border-radius: 15px;
-            transition: 0.2s;
-            width: 340px; height: 70px;
-            margin-top: 6px;
-            overflow: scroll;
-        }
-        #bottombar:focus{
-            background-color: white;
-            box-shadow: 10px 0px 20px 2px rgba(0, 0, 0, 0.2);
-            height: 400px;
-            transform: translateY(-330px);
-        }
-
-        #sidebar{
-            width: 80px;
-            height: 400px;
-            padding: 15px;
-            padding-top: 7px;
-            position: absolute;
-            background-color: rgb(254, 254, 254);
-            border: 1px solid gray;
-            border-radius: 15px;
-            
-            text-align: left;
-            justify-content: left;
-            transition: 0.2s;
-            overflow-y: scroll;
-        }
-
-        #sidebar:hover{
-            background-color: white;
-            position: absolute;
-            margin-right: 10px;
-            width: 250px;
-            box-shadow: 10px 0px 20px 2px rgba(0, 0, 0, 0.2);
-        }    
-
-
-        #ham{
-            margin-right: 10px;
-            width: 30px; 
-            height: 30px; 
-            border-radius: 15px; 
-            border: 0px;
-            background-color: rgb(215, 92, 21);
-            color: rgb(233, 233, 233); 
-            box-shadow: 3px 3px 10px 2px rgba(125, 90, 90, 0.4); 
-            text-align: center;
-            -webkit-text-align: center;
-            transition: 0.2s;
-        }
-        #ham:focus{
-            padding: 10px;
-            -webkit-transform: translateX(-200px);
-            -webkit-transform: translateY(60px);
-            background: white;
-            box-shadow: 2px 2px 10px 2px rgba(125, 90, 90, 0.2); 
-            border-radius: 20px;
-            justify-content: baseline;
-            width: 220px;
-            height: 150px;
-            border-radius: 10px;
-            transform: translate(-200px, 60px);
-        }
-        .men-but{
-            width: 80px;
-            height: 80px;
-            text-align: center;
-            background-color: rgb(250, 250, 250);
-            border: 1px solid rgb(210, 210, 210);
-            border-radius: 10px;
-            font-size: 12px;
-            font-family: Arial, Helvetica, sans-serif;
-            transition: 0.3s; 
-            color: black;
-            padding: 0px;
-            margin-bottom: 5px;
-        }
-        .men-but:hover{
-            transform: translateY(-10px);
-            height: 160px;
-        }
-        .side-but:hover{
-            box-shadow: 0px 0px 20px 5px rgba(128, 128, 128, 0.25);
-            font-size: 19px;
-            background-color: rgb(223, 232, 241);
-        }
-        .side-but:focus{
-            font-size: 18px;
-            box-shadow: 0px 0px 20px 1px rgba(128, 128, 128, 0.25);
-            
-            color: rgb(6, 41, 79);
-            border: 1px solid rgb(9, 63, 120);
-            background-color: rgb(166, 203, 242);
-        }
-
-        .sub-but{
-            width: 180px;
-            text-align: left;
-            background-color: rgb(255, 255, 255);
-            border: 1px solid rgb(210, 210, 210);
-            border-radius: 10px;
-            font-size: 18px;
-            font-family: Arial, Helvetica, sans-serif;
-            margin-bottom: 5px;
-            margin-left: 5px;
-            padding: 5px;
-            padding-left: 10px;
-            transition: 0.5s; 
-        }
-        .sub-but:hover{
-            background-color: rgb(240, 240, 240);
-            color: black;
-            box-shadow: 0px 0px 10px 2px rgba(128, 128, 128, 0.3);
-            
-        }
-        h3{
-            margin-top: 0px;
-            text-align: center;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 16p;
-        }
-        .primary-button{
-            margin: 5px;
-            background-color: black;
-            border: 1px solid black;
-            color: white;
-            font-size: 18px;
-            font-family: Arial, Helvetica, sans-serif;
-            text-align: center;
-            font-weight: bold;
-            border-radius: 10px;
-            padding: 10px;
-            width: 138px;
-        }
-        .secondary-button{
-            margin: 5px;
-            background-color: white;
-            border: 2px solid gray;
-            color: rgb(42, 42, 42);
-            font-size: 18px;
-            font-family: Arial, Helvetica, sans-serif;
-            text-align: center;
-            font-weight: bold;
-            border-radius: 10px;
-            padding: 10px;
-            width: 138px;
-        }
+        
     </style>
 </head>
 <body>
@@ -220,7 +26,7 @@
         <div id="user-details" style="text-align: right; display: flex; justify-content: right; margin-right: 0px; margin-bottom: 0px; background-color: rgb(36, 36, 36); padding-bottom: 10px;">
             <h1 style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; margin: 0; margin-right: 10px; color: white;">Bienvenido</h1><span id="user" style="font-size: 16px; font-family: Arial, Helvetica, sans-serif; margin-right: 20px; color: white;"></span>
             <script>
-                    document.getElementById('user').textContent = localStorage.getItem('USER')
+                document.getElementById('user').textContent = localStorage.getItem('USER')
             </script>
         </div>
 
@@ -230,61 +36,63 @@
             
             <div class="row"> 
                 <div class="column" style="width: 360px;">
-                    <div id="sidebar" style="margin: 250px; transform: translateY(-250px);">
-                        <h3>HOT</h3>
-                        <button class="men-but" id="Amer." onmouseover="this.focus()" onfocus="showSub(this.id)" onblur="hideSub(this.id)">Amer.</button>
-                        <button class="men-but" id="Amer. +Lech" onmouseover="this.focus()" onfocus="showSub(this.id)" onblur="hideSub(this.id)">Amer. c/Leche</button>
-                        <button class="men-but" id="Amer. +Sabor" onmouseover="this.focus()" onfocus="showSub(this.id)" onblur="hideSub(this.id)">Amer. c/Sabor</button>
-                        <button class="men-but" id="Latte" onmouseover="this.focus()" onfocus="showSub(this.id)" onblur="hideSub(this.id)">Latte</button>
-                        <button class="men-but" id="Latte + Sabor" onmouseover="this.focus()" onfocus="showSub(this.id)" onblur="hideSub(this.id)">Latte Sabor</button>
-                        <button class="men-but" id="Cap." onmouseover="this.focus()" onfocus="showSub(this.id)" onblur="hideSub(this.id)">Cap.</button>
-                        <button class="men-but" id="Cap. +Sabor" onmouseover="this.focus()" onfocus="showSub(this.id)" onblur="hideSub(this.id)">Cap. Sabor</button>
-                        <button class="men-but" id="Chai" onmouseover="this.focus()" onfocus="showSub(this.id)" onblur="hideSub(this.id)">Chai</button>
-                        <button class="men-but" id="Matcha" onmouseover="this.focus()" onfocus="showSub(this.id)" onblur="hideSub(this.id)">Matcha</button>
-                        <button class="men-but" id="Te" onmouseover="this.focus()" onfocus="showSub(this.id)" onblur="hideSub(this.id)">Te</button>
-                        
-                    </div>
-    
-                    <div id="sidebar" style="margin-left: 125px;">
-                        <h3>COLD</h3>
-                        <button class="men-but" id="Frappe Natural" onmouseover="this.focus()" onfocus="showSub(this.id)" onblur="hideSub(this.id)">Frappe Natural</button>
-                        <button class="men-but" id="Frappe Moka" onmouseover="this.focus()" onfocus="showSub(this.id)" onblur="hideSub(this.id)">Frappe Moka</button>
-                        <button class="men-but" id="Frappe Cajeta" onmouseover="this.focus()" onfocus="showSub(this.id)" onblur="hideSub(this.id)">Frappe Cajeta</button>
-                        <button class="men-but" id="Frappe Oreo" onmouseover="this.focus()" onfocus="showSub(this.id)" onblur="hideSub(this.id)">Frappe Oreo</button>
-                        <button class="men-but" id="Frappe Nutella" onmouseover="this.focus()" onfocus="showSub(this.id)" onblur="hideSub(this.id)">Frappe Nutella</button>
-                        <button class="men-but" id="Frappe Ferrero" onmouseover="this.focus()" onfocus="showSub(this.id)" onblur="hideSub(this.id)">Frappe Ferrero</button>
-                        <button class="men-but" id="Frappe Chai" onmouseover="this.focus()" onfocus="showSub(this.id)" onblur="hideSub(this.id)">Frappe Chai</button>
-                        <button class="men-but" id="Frappe Matcha" onmouseover="this.focus()" onfocus="showSub(this.id)" onblur="hideSub(this.id)">Frappe Matcha</button>
-                        <button class="men-but" id="Frappe Perlas" onmouseover="this.focus()" onfocus="showSub(this.id)" onblur="hideSub(this.id)">Frappe Perlas</button>
-                        <button class="men-but" id="Frappe Vainilla" onmouseover="this.focus()" onfocus="showSub(this.id)" onblur="hideSub(this.id)">Frappe Vainilla</button>
-                        <button class="men-but" id="Frappe Crem.Ir." onmouseover="this.focus()" onfocus="showSub(this.id)" onblur="hideSub(this.id)">Frappe Crem.Ir.</button>
-                        <button class="men-but" id="Frappe Amaretto" onmouseover="this.focus()" onfocus="showSub(this.id)" onblur="hideSub(this.id)">Frappe Amaretto</button>
-                    </div>
-                    
-                    <div id="sidebar" style="margin-left: 0px;">
+                    <div id="sidebar-1" style="margin: 250px; transform: translateY(-250px);">
                         <h3>OTHER</h3>
-                        <button class="men-but" id="Pastel Choc">Pastel Choc.</button>
-                        <button class="men-but" id="Pay Limon">Pay Limon</button>
-                        <button class="men-but" id="Pay Q.Chisp.">Pay Q.Chisp.</button>
-                        <button class="men-but" id="Pay Q.Fram.">Pay Q.Fram.</button>
-                        <button class="men-but" id="Chocoflan">Chocoflan</button>
-                        <button class="men-but" id="Muffin">Muffin</button>
-                        <button class="men-but" id="Brownie">Brownie</button>
-                        <button class="men-but" id="Galleta">Galleta</button>
-                        <button class="men-but" id="Agua 1L">Agua 1L</button>
-                        <button class="men-but" id="Agua 500ml">Agua 500ml</button>
-                        <button class="men-but" id="Coca-cola">Coca-cola</button>
-                        <button class="men-but" id="Refresco Sabor">Refresco Sabor</button>
+                        <button class="men-but" id="Pastel Choc" onmouseover="this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Pastel Choc.</button>
+                        <button class="men-but" id="Pay Limon" onmouseover="this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Pay Limon</button>
+                        <button class="men-but" id="Pay Q.Chisp." onmouseover="this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Pay Q.Chisp.</button>
+                        <button class="men-but" id="Pay Q.Fram." onmouseover="this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Pay Q.Fram.</button>
+                        <button class="men-but" id="Chocoflan" onmouseover="this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Chocoflan</button>
+                        <button class="men-but" id="Muffin" onmouseover="this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Muffin</button>
+                        <button class="men-but" id="Brownie" onmouseover="this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Brownie</button>
+                        <button class="men-but" id="Galleta" onmouseover="this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Galleta</button>
+                        <button class="men-but" id="Agua 1L" onmouseover="this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Agua 1L</button>
+                        <button class="men-but" id="Agua 500ml" onmouseover="this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Agua 500ml</button>
+                        <button class="men-but" id="Coca-cola" onmouseover="this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Coca-cola</button>
+                        <button class="men-but" id="Refresco Sabor" onmouseover="this.focus()" onfocus="showSub(this.id,1)" onblur="hideSub(this.id)">Refresco Sabor</button>
+                    
                     </div>
     
+                    <div id="sidebar-2" style="margin-left: 125px;">
+                        <h3>COLD</h3>
+                        <button class="men-but" id="Frappe Natural" onmouseover="this.focus()" onfocus="showSub(this.id,2)" onblur="hideSub(this.id)">Frappe Natural</button>
+                        <button class="men-but" id="Frappe Moka" onmouseover="this.focus()" onfocus="showSub(this.id,2)" onblur="hideSub(this.id)">Frappe Moka</button>
+                        <button class="men-but" id="Frappe Cajeta" onmouseover="this.focus()" onfocus="showSub(this.id,2)" onblur="hideSub(this.id)">Frappe Cajeta</button>
+                        <button class="men-but" id="Frappe Oreo" onmouseover="this.focus()" onfocus="showSub(this.id,2)" onblur="hideSub(this.id)">Frappe Oreo</button>
+                        <button class="men-but" id="Frappe Nutella" onmouseover="this.focus()" onfocus="showSub(this.id,2)" onblur="hideSub(this.id)">Frappe Nutella</button>
+                        <button class="men-but" id="Frappe Ferrero" onmouseover="this.focus()" onfocus="showSub(this.id,2)" onblur="hideSub(this.id)">Frappe Ferrero</button>
+                        <button class="men-but" id="Frappe Chai" onmouseover="this.focus()" onfocus="showSub(this.id,2)" onblur="hideSub(this.id)">Frappe Chai</button>
+                        <button class="men-but" id="Frappe Matcha" onmouseover="this.focus()" onfocus="showSub(this.id,2)" onblur="hideSub(this.id)">Frappe Matcha</button>
+                        <button class="men-but" id="Frappe Perlas" onmouseover="this.focus()" onfocus="showSub(this.id,2)" onblur="hideSub(this.id)">Frappe Perlas</button>
+                        <button class="men-but" id="Frappe Vainilla" onmouseover="this.focus()" onfocus="showSub(this.id,2)" onblur="hideSub(this.id)">Frappe Vainilla</button>
+                        <button class="men-but" id="Frappe Crem.Ir." onmouseover="this.focus()" onfocus="showSub(this.id,2)" onblur="hideSub(this.id)">Frappe Crem.Ir.</button>
+                        <button class="men-but" id="Frappe Amaretto" onmouseover="this.focus()" onfocus="showSub(this.id,2)" onblur="hideSub(this.id)">Frappe Amaretto</button>
+                    </div>
                     
+                    <div id="sidebar-3" style="margin-left: 0px;">
+
+                        <h3>HOT</h3>
+                        <button class="men-but" id="Amer." onmouseover="this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Amer.</button>
+                        <button class="men-but" id="Amer. +Lech" onmouseover="this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Amer. c/Leche</button>
+                        <button class="men-but" id="Amer. +Sabor" onmouseover="this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Amer. c/Sabor</button>
+                        <button class="men-but" id="Latte" onmouseover="this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Latte</button>
+                        <button class="men-but" id="Latte + Sabor" onmouseover="this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Latte Sabor</button>
+                        <button class="men-but" id="Cap." onmouseover="this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Cap.</button>
+                        <button class="men-but" id="Cap. +Sabor" onmouseover="this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Cap. Sabor</button>
+                        <button class="men-but" id="Chai" onmouseover="this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Chai</button>
+                        <button class="men-but" id="Matcha" onmouseover="this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Matcha</button>
+                        <button class="men-but" id="Te" onmouseover="this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Te</button>
+                        
+                        </div>
+    
                 </div>  
 
                 <div id="bottombar">
                     <h3>Herramientas</h3>
                     <button class="men-but" id="Ejemplo">Ejemplo</button>
 
-                </div>  
+                </div>
+
             </div>
 
             <div id="subtotal-pane" class="column-full" style="margin-left: 10px; width: 360px; text-align: center; border: 1px solid gray; border-radius: 15px;">
@@ -295,41 +103,77 @@
                         <span style="font-weight: bold; font-family: Arial, Helvetica, sans-serif;">Fecha: </span><span id="date">13/11/2023</span> <br>
                         <br>
                         <span style="font-weight: bold; font-size: 16px; font-family: Arial, Helvetica, sans-serif;"> Articulos:</span>
-                        <ul style="list-style: none; text-align: left; height: 260px; overflow-y: scroll;">
-                            <li style="display: flex; flex-direction: row;"><div style="width: 130px;">Frappe Natural</div><div style="width: 50px;">(G)</div><div style="width: 50px;">$50.00</div></li>
+                        <ul style="list-style: none; text-align: left; height: 260px; overflow-y: scroll;" id="orderList">
                         </ul>
 
-                        <button class="primary-button">CASH</button>
+                        <button class="primary-button" onmousedown="" onfocus="">CASH</button>
                         <button class="secondary-button">CARD</button>
 
-                </div>
-                        
-            </div>
-                
-
-                    
-            
-                
-
-                
+                </div>      
+            </div>                
         </div>
-
     </div>
     
 
 </body>
 <script>
-    function showSub(ID){
+    function showSub(ID,options){
         const menuitems = document.getElementById(ID);
-        menuitems.innerHTML += `<br><button class="size-button">Ch</button> <button class="size-button">M</button> <button class="size-button">G</button>`
-        console.log("showing",ID)
+
+        if(options==1){
+            setTimeout(() => {  
+
+            menuitems.innerHTML = `<br>
+            <button onmousedown="addToOrder('${ID}','Ch')" class="size-button">Add</button> 
+            `
+
+            }, 100);
+        }
+        if(options==2){
+            setTimeout(() => {  
+
+            menuitems.innerHTML = `<br>
+            <button onmousedown="addToOrder('${ID}','Ch')" class="size-button">Ch</button> 
+            <button onmousedown="addToOrder('${ID}','G')" class="size-button">G</button>
+            `
+
+            }, 100);}
+        if(options==3){
+            setTimeout(() => {  
+
+            menuitems.innerHTML = `<br>
+            <button onmousedown="addToOrder('${ID}','Ch')" class="size-button">Ch</button> 
+            <button onmousedown="addToOrder('${ID}','M')" class="size-button">M</button> 
+            <button onmousedown="addToOrder('${ID}','G')" class="size-button">G</button>
+            `
+
+            }, 100);}
+
+        
+        
+        //console.log("showing",ID)
     }
     
     function hideSub(ID){
     
         const menuitems = document.getElementById(ID);
-        menuitems.textContent = ID;
-        console.log("hiding",ID)
+        menuitems.innerHTML = ID;
+        menuitems.blur()
+        //console.log("hiding",ID)
+        
+    }
+
+    function addToOrder(ID,size){
+        const menuitems = document.getElementById(ID);
+        menuitems.blur()
+        hideSub(ID)
+
+        let List = document.getElementById('orderList')
+        let items = {}
+    
+        List.innerHTML += `<li style="display: flex; flex-direction: row;"><div style="width: 130px;">${ID}</div><div style="width: 50px;">${size}</div><div style="width: 50px;">${List[ID]}</div></li>`
+        
+        console.log(items[ID])
         
     }
 </script>
