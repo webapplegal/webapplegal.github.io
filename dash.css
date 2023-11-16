@@ -213,3 +213,11 @@ h3{
     padding: 10px;
     width: 138px;
 }
+.men-title{
+    width: 80px;
+    border:0;
+    background-color: #ffffff00;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+}
