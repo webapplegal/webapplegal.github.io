@@ -76,14 +76,14 @@
                     <div id="sidebar-3" style="margin-left: 0px;" onmouseenter="dispSidebar(1,132); dispSidebar(3,-20); dispSidebar(2,142)" onmouseleave="resetSidebars()">
 
                         <button class="men-title">HOT</button><br>
-                        <button class="men-but" id="Amer" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Amer</button>
-                        <button class="men-but" id="Amer - Leche" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Amer Leche</button>
-                        <button class="men-but" id="Amer - Sabor" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Amer Sabor</button>
-                        <button class="men-but" id="Latte" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Latte</button>
-                        <button class="men-but" id="Latte - Sabor" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Latte Sabor</button>
-                        <button class="men-but" id="Cap" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Cap</button>
-                        <button class="men-but" id="Cap - Sabor" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Cap Sabor</button>
-                        <button class="men-but" id="Chai" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Chai</button>
+                        <button class="men-but" id="Amer Natur" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Amer Natural</button>
+                        <button class="men-but" id="Amer Leche" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Amer Leche</button>
+                        <button class="men-but" id="Amer Sabor" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Amer Sabor</button>
+                        <button class="men-but" id="Latte Natur" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Latte Natur</button>
+                        <button class="men-but" id="Latte Sab" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Latte Sabor</button>
+                        <button class="men-but" id="Cap Natur" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Cap Natur</button>
+                        <button class="men-but" id="Cap Sabor" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Cap Sab</button>
+                        <button class="men-but" id="Chai Te" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Chai Te</button>
                         <button class="men-but" id="Matcha" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Matcha</button>
                         <button class="men-but" id="Te" onclick="javascript:this.focus()" onfocus="showSub(this.id,3)" onblur="hideSub(this.id)">Te</button>
                         
@@ -151,7 +151,7 @@
         if(options==1){
             setTimeout(() => {  
 
-            menuitems.innerHTML = `<br>
+            menuitems.innerHTML = `
             <button onmousedown="addToOrder('${ID}','Ch')" class="size-button">Add</button> 
             `
 
@@ -160,7 +160,7 @@
         if(options==2){
             setTimeout(() => {  
 
-            menuitems.innerHTML = `<br>
+            menuitems.innerHTML = `
             <button onmousedown="addToOrder('${ID}','Ch')" class="size-button">Ch</button> 
             <button onmousedown="addToOrder('${ID}','G')" class="size-button">G</button>
             `
@@ -169,7 +169,7 @@
         if(options==3){
             setTimeout(() => {  
 
-            menuitems.innerHTML = `<br>
+            menuitems.innerHTML = `
             <button onmousedown="addToOrder('${ID}','Ch')" class="size-button">Ch</button> 
             <button onmousedown="addToOrder('${ID}','M')" class="size-button">M</button> 
             <button onmousedown="addToOrder('${ID}','G')" class="size-button">G</button>
