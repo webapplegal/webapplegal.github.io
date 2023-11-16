@@ -101,10 +101,19 @@
 
             <div id="subtotal-pane" class="column-full" style="margin-left: 10px; width: 360px; text-align: center; border: 1px solid gray; border-radius: 15px;">
                 <div style="text-align: left; padding-left: 30px; width: 300px;">
+                        
                         <h1 style="font-family: Arial, Helvetica, sans-serif; margin-top: 20px; text-align: right;">Subtotal</h1>
-                        <span style="font-weight: bold; font-family: Arial, Helvetica, sans-serif;">Orden: </span><span id="orderNo">109292831</span> <br>
-                        <span style="font-weight: bold; font-family: Arial, Helvetica, sans-serif;">Fecha: </span><span id="date">13/11/2023</span> <br>
-                        <span style="font-weight: bold; font-family: Arial, Helvetica, sans-serif;">Fecha: </span><span id="date">13/11/2023</span> <br>
+                        <div style="display: flex;">
+                            <div style="width: 130px;">
+                                <span style="font-weight: bold; font-family: Arial, Helvetica, sans-serif;">Orden: </span><span id="orderNo">109292831</span> <br>
+                                <span style="font-weight: bold; font-family: Arial, Helvetica, sans-serif;">Fecha: </span><span id="date">13/11/2023</span> <br>
+                                <span style="font-weight: bold; font-family: Arial, Helvetica, sans-serif;">Fecha: </span><span id="date">13/11/2023</span> <br>    
+                            </div>
+                            <div style="width: 170px; text-align: right;">
+                                <span id="subtotal" style="font-family: Arial, Helvetica, sans-serif; font-size: 20px; font-weight: bold; color: rgb(23, 63, 194);"></span>
+                            </div>
+                        </div>
+                        
                         <br>
                         <span style="font-weight: bold; font-size: 16px; font-family: Arial, Helvetica, sans-serif;"> Articulos:</span>
                         <ul style="list-style: none; text-align: left; height: 260px; overflow-y: scroll;" id="orderList">
@@ -121,6 +130,10 @@
 
 </body>
 <script>
+    let subtotal = 0
+
+    document.getElementById('subtotal').textContent = subtotal.toLocaleString('en-US', {style: 'currency', currency: 'USD',})
+    
     function dispSidebar(id,xdisp){
         document.getElementById('sidebar-'+String(id)).style.transform = 'translateX('+xdisp+'px)';
     }
@@ -188,6 +201,8 @@
         
         if(items[ID]==null){
             items.ID = itemCosts[ID][size]
+            subtotal += itemCosts[ID][size]
+            document.getElementById('subtotal').textContent = subtotal.toLocaleString('en-US', {style: 'currency', currency: 'USD',})
         } 
         else {
             items[ID] += itemCosts[ID][size]
