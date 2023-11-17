@@ -240,18 +240,12 @@
         }
 
         setTimeout(()=>{
-            el.innerHTML = `<button style="margin-bottom:10px; width:100px;height:50px;background: ${colorBack}; color:${colorText}; border-radius:10px; border: 2px solid ${colorText}; font-size:18px; font-weight:bold;"" onclick="alert('${subtotal.toLocaleString('es-MX', {style: 'currency', currency: 'MXN',})} pagado en ${method}')">Total</button><br>
+            el.innerHTML = `<button style="margin-bottom:10px; width:100px;height:50px;background: ${colorBack}; color:${colorText}; border-radius:10px; border: 2px solid ${colorText}; font-size:18px; font-weight:bold;"" onclick="confirmPay('${method}')">Total</button><br>
                         <button style="width:100px;height:50px;background: ${colorBack}; color:${colorText}; border-radius:10px; border: 2px solid ${colorText}; font-size:18px; font-weight:bold;"">Partial</button>`
     
         },50)
 
         
-        
-        let List = document.getElementById('orderList')
-        List.innerHTML = ""
-        subtotal = 0
-        List = {}
-
     
         /*
         set(ref(db,'Sales/1'),{
@@ -272,6 +266,17 @@
         method = String(method).toUpperCase()
         el.innerHTML = ""
         el.textContent = method
+    }
+
+    function confirmPay(method)
+    {
+        alert(subtotal.toLocaleString('es-MX', {style: 'currency', currency: 'MXN',})+" pagado en "+method)
+        let List = document.getElementById('orderList')
+        List.innerHTML = ""
+        subtotal = 0
+        document.getElementById('subtotal').textContent = subtotal.toLocaleString('en-US', {style: 'currency', currency: 'USD',})
+        List = {}
+
     }
 
 </script>
