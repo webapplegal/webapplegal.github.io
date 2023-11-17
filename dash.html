@@ -161,7 +161,7 @@
             setTimeout(() => {  
 
             menuitems.innerHTML = `
-            <button onmousedown="addToOrder('${ID}','Ch')" class="size-button">Add</button> 
+            <button onmousedown="addToOrder('${ID}','CH')" class="size-button">Add</button> 
             `
 
             }, 100);
@@ -170,7 +170,7 @@
             setTimeout(() => {  
 
             menuitems.innerHTML = `
-            <button onmousedown="addToOrder('${ID}','Ch')" class="size-button">Ch</button> 
+            <button onmousedown="addToOrder('${ID}','CH')" class="size-button">CH</button> 
             <button onmousedown="addToOrder('${ID}','G')" class="size-button">G</button>
             `
 
@@ -179,7 +179,7 @@
             setTimeout(() => {  
 
             menuitems.innerHTML = `
-            <button onmousedown="addToOrder('${ID}','Ch')" class="size-button">Ch</button> 
+            <button onmousedown="addToOrder('${ID}','CH')" class="size-button">CH</button> 
             <button onmousedown="addToOrder('${ID}','M')" class="size-button">M</button> 
             <button onmousedown="addToOrder('${ID}','G')" class="size-button">G</button>
             `
@@ -206,17 +206,17 @@
         hideSub(ID)
 
         let List = document.getElementById('orderList')
-        window.items = {}
+        window.itemsOrdered = {}
     
         List.innerHTML += `<li style="display: flex; flex-direction: row;"><div style="width: 130px;">${ID}</div><div style="width: 50px;">${size}</div><div style="width: 50px;">${itemCosts[ID][size].toLocaleString('es-MX', {style: 'currency', currency: 'MXN',})}</div></li>`
         
-        if(items[ID]==null){
-            items.ID = itemCosts[ID][size]
+        if(itemsOrdered[ID]==null){
+            itemsOrdered.ID = itemCosts[ID][size]
             subtotal += itemCosts[ID][size]
-            document.getElementById('subtotal').textContent = subtotal.toLocaleString('en-US', {style: 'currency', currency: 'USD',})
+            document.getElementById('subtotal').textContent = subtotal.toLocaleString('es-MX', {style: 'currency', currency: 'MXN',})
         } 
         else {
-            items[ID] += itemCosts[ID][size]
+            itemsOrdered[ID] += itemCosts[ID][size]
             subtotal += itemCosts[ID][size]
         }
 
