@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="dash.css">
     <script type="module" src="./JS/dbconfig.js"></script>
     <script type="module" src="LoadItems.js"></script>
-
+    <script type="module" src="getCosts.js"></script>
     <style>
         
     </style>
@@ -119,9 +119,16 @@
                         <ul style="list-style: none; text-align: left; height: 260px; overflow-y: scroll;" id="orderList">
                         </ul>
 
-                        <button class="primary-button" onmousedown="" onfocus="">CASH</button>
-                        <button class="secondary-button">CARD</button>
+                        <div style="display: flex; margin-bottom: 20px;">
+                            <div>
+                                <button id="cash-button" class="primary-button" onmouseenter="this.focus()" onfocus="addOrderToDB('cash')" onmouseleave="returnMethodButton('cash')">CASH</button>
+                            </div>
+                            <div>
+                                <button id="card-button" class="secondary-button" onmouseenter="this.focus()" onfocus="addOrderToDB('card')" onmouseleave="returnMethodButton('card')">CARD</button>
+                            </div>
+                        </div>
 
+                        
                 </div>      
             </div>                
         </div>
@@ -131,8 +138,10 @@
 </body>
 <script>
     let subtotal = 0
+    let cantidades = {}
+    let montos = {}
 
-    document.getElementById('subtotal').textContent = subtotal.toLocaleString('en-US', {style: 'currency', currency: 'USD',})
+    document.getElementById('subtotal').textContent = subtotal.toLocaleString('es-MX', {style: 'currency', currency: 'MXN',})
     
     function dispSidebar(id,xdisp){
         document.getElementById('sidebar-'+String(id)).style.transform = 'translateX('+xdisp+'px)';
@@ -189,15 +198,17 @@
         
     }
 
+  
+
     function addToOrder(ID,size){
         const menuitems = document.getElementById(ID);
         menuitems.blur()
         hideSub(ID)
 
         let List = document.getElementById('orderList')
-        let items = {}
+        window.items = {}
     
-        List.innerHTML += `<li style="display: flex; flex-direction: row;"><div style="width: 130px;">${ID}</div><div style="width: 50px;">${size}</div><div style="width: 50px;">${itemCosts[ID][size].toLocaleString('en-US', {style: 'currency', currency: 'USD',})}</div></li>`
+        List.innerHTML += `<li style="display: flex; flex-direction: row;"><div style="width: 130px;">${ID}</div><div style="width: 50px;">${size}</div><div style="width: 50px;">${itemCosts[ID][size].toLocaleString('es-MX', {style: 'currency', currency: 'MXN',})}</div></li>`
         
         if(items[ID]==null){
             items.ID = itemCosts[ID][size]
@@ -206,25 +217,65 @@
         } 
         else {
             items[ID] += itemCosts[ID][size]
+            subtotal += itemCosts[ID][size]
         }
 
         console.log(items)
 
     }
+    
+    function addOrderToDB(method){
+        let el = document.getElementById(method+"-button")
+        el.style.transition = "0.5s"
+        el.style.transform = "translateY(-100px)"
+        el.style.transition = "0.1s"
+        el.style.height = "150px"
+
+        let colorText = "white"
+        let colorBack = "black"
+
+        if(method=="card"){
+            colorText = "black"   
+            colorBack = "white" 
+        }
+
+        setTimeout(()=>{
+            el.innerHTML = `<button style="margin-bottom:10px; width:100px;height:50px;background: ${colorBack}; color:${colorText}; border-radius:10px; border: 2px solid ${colorText}; font-size:18px; font-weight:bold;"" onclick="alert('${subtotal.toLocaleString('es-MX', {style: 'currency', currency: 'MXN',})} pagado en ${method}')">Total</button><br>
+                        <button style="width:100px;height:50px;background: ${colorBack}; color:${colorText}; border-radius:10px; border: 2px solid ${colorText}; font-size:18px; font-weight:bold;"">Partial</button>`
+    
+        },50)
+
+        
+        
+        let List = document.getElementById('orderList')
+        List.innerHTML = ""
+        subtotal = 0
+        List = {}
+
+    
+        /*
+        set(ref(db,'Sales/1'),{
+            user: localStorage.getItem("USER"),
+            when: String(new Date()).substring(4,24),
+            subtotales: subtotal,
+        });
+        */
+    
+    }
+
+    function returnMethodButton(method){
+        let el = document.getElementById(method+"-button")
+        el.style.transition = "0.5s"
+        el.style.transform = "translateY(0px)"
+        el.style.transition = "0.1s"
+        el.style.height = "50px"
+        method = String(method).toUpperCase()
+        el.innerHTML = ""
+        el.textContent = method
+    }
 
 </script>
 
-<script type="module">
-    import {getDatabase, set, get, update, remove, ref, child, onValue} from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js"; 
-    window.ItemDir = ref(db,'Items/');
-    window.itemCosts = {}
 
-    onValue(ItemDir, (snapshot)=>{
-        snapshot.forEach(
-        function(ChildSnapshot){
-            itemCosts[ChildSnapshot.key] = ChildSnapshot.val()
-        })
-    });
-</script>
 </html>
 
